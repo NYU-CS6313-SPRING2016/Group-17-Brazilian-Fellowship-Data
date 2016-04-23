@@ -1,1 +1,1 @@
-InfoViz Project Spring 2016
+InfoViz Project Spring 2016 - Andre Mendes
