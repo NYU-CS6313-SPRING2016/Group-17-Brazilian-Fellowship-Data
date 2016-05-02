@@ -99,6 +99,7 @@
     vertical-align: middle;
     float: none;
 }
+    
 
     </style>
 </head>
@@ -127,7 +128,7 @@
             <div class="info-box bg-yellow">
               <span class="info-box-icon"><i class="fa fa-users"></i></span>
               <div class="info-box-content">
-                <span class="info-box-text">Repproved Real</span>
+                <span class="info-box-text">Rejected Real</span>
                 <span class="info-box-number" id="reproved_real"></span>
                 <div class="progress">
                   <div class="progress-bar" id="reproved_real_pct"></div>
@@ -189,20 +190,20 @@
                         <div class="col-md-7" id="col_metrics">
                             <div class="row">   
                                <div align="center">
-                                   <button type="button" class="btn_change" onclick="changeCurves('0','myDiv2');">Precision</button>
-                                   <button type="button" class="btn_change" onclick="changeCurves('1','myDiv2');">Recall</button>
-                                   <button type="button" class="btn_change" onclick="changeCurves('2','myDiv2');">Fscore</button>
-                                   <button type="button" class="btn_change" onclick="changeCurves('3','myDiv2');">Accuracy</button>
+                                   <button id ="preb" type="button" class="btn_change" onclick="changeCurves('0','myDiv2'); checkButton('preb');">Precision</button>
+                                   <button id ="recb" type="button" class="btn_change" onclick="changeCurves('1','myDiv2'); checkButton('recb');">Recall</button>
+                                   <button id ="fscb" type="button" class="btn_change" onclick="changeCurves('2','myDiv2'); checkButton('fscb');">Fscore</button>
+                                   <button id ="accb" type="button" class="btn_change" onclick="changeCurves('3','myDiv2'); checkButton('accb');">Accuracy</button>
                                    </div>
                                 <div id="myDiv2"></div>
                             
                             </div>
                             <div class="row">
                              <div align="center">
-                                   <button type="button" class="btn_change" onclick="changeCurves('0','myDiv3');">True+</button>
-                                   <button type="button" class="btn_change" onclick="changeCurves('1','myDiv3');">True-</button>
-                                   <button type="button" class="btn_change" onclick="changeCurves('2','myDiv3');">False+</button>
-                                   <button type="button" class="btn_change" onclick="changeCurves('3','myDiv3');">False-</button>
+                                   <button id ="tpb" type="button" class="btn_change" onclick="changeCurves('0','myDiv3'); checkButton('tpb');">True+</button>
+                                   <button id ="tnb" type="button" class="btn_change" onclick="changeCurves('1','myDiv3'); checkButton('tnb');">True-</button>
+                                   <button id ="fpb" type="button" class="btn_change" onclick="changeCurves('2','myDiv3'); checkButton('fpb');">False+</button>
+                                   <button id ="fnb" type="button" class="btn_change" onclick="changeCurves('3','myDiv3'); checkButton('fnb');">False-</button>
                                    </div>
                                 <div id="myDiv3"></div>
                             </div>      
@@ -213,7 +214,16 @@
             <div class="box-footer">                
                     
                     <div class="col-md-6" align="center">
-                        <div class="head_btn">THRESHOLD</div>
+                        <span class="head_btn">THRESHOLD
+                            <input type=text
+                                   id=myInput
+                                   style="width:80px"
+                                   oninput="showValue(this.value,1,false);
+                                                setThreshold(this.value);"
+                                   onchange="showValue(this.value,1,false);
+                                                setThreshold(this.value);">
+                        </span>
+                        
                         <div class="slidershell" id="slidershell1">
                                 <div class="sliderfill" id="sliderfill1"></div>
                                 <div class="slidertrack" id="slidertrack1"></div>
@@ -242,8 +252,14 @@
                     </div>
 
             </div>
+                    
+                
+                    
                 </div>
                 <div class="col-md-3">
+                <p class="text-center">
+                    <strong>General Measures</strong>
+                </p>
                 <div class="progress-group">
                     <span class="progress-text">Correct</span>
                     <span class="progress-number">
@@ -267,22 +283,22 @@
                   </div>
                     
                     <p class="text-center">
-                    <strong>Measures</strong>
+                    <strong>Rates</strong>
                   </p>
 
                   <div class="progress-group">
-                      <span style="font-size:100%;">Correctly Approved (True+)</span>
+                      <span id="tph" style="font-size:100%;" title="Applicants approved by both the humans and the system">Correctly Approved (True+)</span>
                     <span class="progress-number">
                         <b id ="tp"></b></span>
                     <div class="progress sm">
-                        <div class="progress-bar progress-bar-blue" 
+                        <div class="progress-bar progress-bar-orange" 
                            id ="tp_pct">
                         </div>
                     </div>
                   </div>
                     
                 <div class="progress-group" height="3">
-                    <span style="font-size:100%;">Incorrectly Rejected (False-)</span>
+                    <span style="font-size:100%;" title="Applicants approved by humans but rejected by the system">Incorrectly Rejected (False-)</span>
                     <span class="progress-number">
                         <b id ="fn"></b></span>
                     <div class="progress sm">
@@ -293,7 +309,7 @@
                   </div>
                     
                  <div class="progress-group">
-                     <span style="font-size:100%;">Correctly Rejected (True-)</span>
+                     <span style="font-size:100%;" title="Applicants rejected by both the humans and the system">Correctly Rejected (True-)</span>
                     <span class="progress-number">
                         <b id ="tn"></b></span>
                     <div class="progress sm">
@@ -304,7 +320,7 @@
                   </div>
                     
                 <div class="progress-group">
-                    <span style="font-size:100%;">Incorrectly Approved (False+)</span>
+                    <span style="font-size:100%;" title="Applicants rejected by humans but approved by the system">Incorrectly Approved (False+)</span>
                     <span class="progress-number">
                         <b id ="fp"></b></span>
                     <div class="progress sm">
@@ -313,6 +329,10 @@
                         </div>
                     </div>
                   </div>
+                    
+                <p class="text-center">
+                    <strong>Performance Measures</strong>
+                  </p>
                     
                 <div class="row">
                 <div class="col-sm-6 col-xs-6">
@@ -580,7 +600,7 @@
             }
         }
         function frequency(result) {
-            var th1 = Array.apply(null, Array(100)).map(function (_, i) {return i;});
+            var th1 = Array.apply(null, Array(200)).map(function (_, i) {return i;});
             var tpr =[], fpr =[] , pre=[], fscore = [], acc = [];
             var tp1 =[], tn1=[], fp1=[],fn1=[], th2 =[];
             var tp, tn, fp, fn;
@@ -606,7 +626,7 @@
                 fp1[j] = fp;
                 fn1[j] = fn;
                 th2[j] = (th1[j]/th1.length);
-                th2[j] = th2[j].toPrecision(2);
+                //th2[j] = th2[j].toPrecision(4);
                 tpr[j] = (tp)/(tp+fn);
                 fpr[j] = (1- (tn)/(tn+fp)).toPrecision(2);
                 pre[j] = (tp)/(tp+fp);
@@ -616,8 +636,20 @@
                 pre[j] = pre[j].toPrecision(2);
                 fscore[j] = fscore[j].toPrecision(2);
             }
-            plotAll("myDiv2",pre,tpr,fscore,acc,th2,document.getElementById("col_metrics").offsetWidth,"Score/Threshold","Metrics",1,"Precision","Recall","FScore","Accuracy");
-            plotAll("myDiv3",tp1,tn1,fp1,fn1,th2,document.getElementById("col_metrics").offsetWidth,"Score/Threshold","Rates",300,"True+","True-","False+","False-");
+            
+            var metrics = [th2,pre,tpr,fscore,acc];
+            var axes_names = ["Score/Threshold","Performance"];
+            var trace_names = ["Precision","Recall","FScore","Accuracy"];
+            var plot_colors = ["#377eb8","#984ea3","#a65628","#f781bf"];
+            
+            plotAll("myDiv2",metrics,document.getElementById("col_metrics").offsetWidth,axes_names,1,trace_names,plot_colors);
+            
+            metrics = [th2,tp1,tn1,fp1,fn1];
+            axes_names = ["Score/Threshold","Applicants"];
+            trace_names = ["True+","True-","False+","False-"];
+            plot_colors = ["#1a9850","#66bd63","#f46d43","#d73027"];
+                    
+            plotAll("myDiv3",metrics,document.getElementById("col_metrics").offsetWidth,axes_names,300,trace_names,plot_colors);
         }
         function UpdateMeasures(system) {
             //Show Data
@@ -677,6 +709,12 @@
         }
         function showValue(val,slidernum,vertical) {
             /* setup variables for the elements of our slider */
+            
+            if (val<0) 
+                val=0;
+            if (val>1)
+                val=1;
+            
             var thumb = document.getElementById("sliderthumb" + slidernum);
             var shell = document.getElementById("slidershell" + slidernum);
             var track = document.getElementById("slidertrack" + slidernum);
@@ -727,6 +765,8 @@
             
             update = {x: [[Number(val),Number(val)]]}
             Plotly.restyle('myDiv3', update,[4])
+            
+            document.getElementById("myInput").value = val;
         }
         function setValue(val,num,vertical) {
             document.getElementById("slider"+num).value = val;
@@ -734,6 +774,7 @@
         }
         document.addEventListener('DOMContentLoaded', function(){   
             setValue(0.5,1,false);
+            document.getElementById("myInput").value = 0.5;
         });      
         window.addEventListener('resize', function() {
             var width = document.getElementById("col_histogram").offsetWidth
@@ -795,7 +836,19 @@
                     bgcolor: "rgba(255, 255, 255, 0.75)", 
                     bordercolor: "rgba(0, 0, 0, 0)", 
                     borderwidth: 1
-                  }, 
+                  },
+                  annotations: [
+                    {x: 0.05,y: 245,xref: 'x',yref: 'y',text: '239',showarrow: false,},
+                    {x: 0.15,y: 33,xref: 'x',yref: 'y',text: '27',showarrow: false,},
+                    {x: 0.25,y: 17,xref: 'x',yref: 'y',text: '11',showarrow: false,},
+                    {x: 0.35,y: 13,xref: 'x',yref: 'y',text: '7',showarrow: false,},
+                    {x: 0.45,y: 17,xref: 'x',yref: 'y',text: '11',showarrow: false,},
+                    {x: 0.55,y: 16,xref: 'x',yref: 'y',text: '10',showarrow: false,},
+                    {x: 0.65,y: 14,xref: 'x',yref: 'y',text: '8',showarrow: false,},
+                    {x: 0.75,y: 15,xref: 'x',yref: 'y',text: '9',showarrow: false,},
+                    {x: 0.85,y: 15,xref: 'x',yref: 'y',text: '9',showarrow: false,},
+                    {x: 0.95,y: 212,xref: 'x',yref: 'y',text: '206',showarrow: false,},
+                  ],
                   margin: {
                     r: 30, 
                     t: 20, 
@@ -838,16 +891,16 @@
                 setThreshold(d.points[0].x);
             });
          }
-        function plotAll(element,precision,recall,fscore,accuracy,threshold,width,xtitle,ytitle,fixedy,t1_name,t2_name,t3_name,t4_name){
+        function plotAll(element,metrics,width,axes_titles,fixedy,trace_names,plot_colors){
              var trace1 = {
-                  y: precision,
-                  x: threshold,
+                  y: metrics[1],
+                  x: metrics[0],
                   line: {
-                    color: "rgb(39, 228, 71)",
+                    color: plot_colors[0],
                     dash: "solid", 
                     width: 4
                   }, 
-                  name: t1_name, 
+                  name: trace_names[0], 
                   opacity: 0.5, 
                   type: "scatter",
                   uid: "905426",
@@ -855,14 +908,14 @@
                   yaxis: "y",
                 };
              var trace2 = {
-                  y: recall,
-                  x: threshold,
+                  y: metrics[2],
+                  x: metrics[0],
                   line: {
-                    color: "rgb(39, 128, 71)",
+                    color: plot_colors[1],
                     dash: "solid", 
                     width: 4
                   }, 
-                  name: t2_name, 
+                  name: trace_names[1], 
                   opacity: 0.5, 
                   type: "scatter",
                   uid: "905426",
@@ -870,14 +923,14 @@
                   yaxis: "y"
                 };
              var trace3 = {
-                  y: fscore,
-                  x: threshold,
+                  y: metrics[3],
+                  x: metrics[0],
                   line: {
-                    color: "rgb(149, 18, 111)",
+                    color: plot_colors[2],
                     dash: "solid", 
                     width: 4
                   }, 
-                  name: t3_name, 
+                  name: trace_names[2], 
                   opacity: 0.5, 
                   type: "scatter",
                   uid: "905426",
@@ -885,14 +938,14 @@
                   yaxis: "y"
                 };
              var trace4 = {
-                  y: accuracy,
-                  x: threshold,
+                  y: metrics[4],
+                  x: metrics[0],
                   line: {
-                    color: "rgb(139, 128, 171)",
+                    color: plot_colors[3],
                     dash: "solid", 
                     width: 4
                   }, 
-                  name: t4_name, 
+                  name: trace_names[3], 
                   opacity: 0.5, 
                   type: "scatter",
                   uid: "905426",
@@ -944,7 +997,7 @@
                     showgrid: true,
                     //autorange: true,
                     range: [0,1],
-                    title: xtitle, 
+                    title: axes_titles[0], 
                     type: "linear",
                     autotick: false,
                     ticks: 'outside',
@@ -956,7 +1009,7 @@
                   yaxis: {
                     autorange: true,
                     //range: [0.3,1.1],
-                    title: ytitle, 
+                    title: axes_titles[1], 
                     type: "linear"
                   },
                   showlegend:false
@@ -988,7 +1041,6 @@
                     unhighlight(d3.select("#featureList2"))
                 });
         });
-        
         d3.csv('https://s3.amazonaws.com/files-deepchoice/DeepChoice/features2.csv', function(error, result){
             d3.select("#featureList").selectAll("li")
                 .data(result.slice(0,13))
@@ -1009,7 +1061,6 @@
                 .style("width",((9/13)*100)+"%");
         });
     
-    
         function highlight(name,list) {
             list.selectAll("div")
                 .style("background-color", function(d,i) { 
@@ -1024,6 +1075,13 @@
                 .style("background-color", undefined)
                 .style("color", undefined)
             
+        }
+    
+        function checkButton(element){
+            if (document.getElementById(element).style.background != "gray")
+                document.getElementById(element).style.background = "gray"
+            else
+                document.getElementById(element).style.background = "white";
         }
     
     </script>
