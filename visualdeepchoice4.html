@@ -287,7 +287,7 @@
                   </p>
 
                   <div class="progress-group">
-                      <span id="tph" style="font-size:100%;" title="Applicants approved by both the humans and the system">Correctly Approved (True+)</span>
+                      <span id="tph" style="font-size:100%;" title="Applicants approved by both the humans and the system - TP">Correctly Approved (True+)</span>
                     <span class="progress-number">
                         <b id ="tp"></b></span>
                     <div class="progress sm">
@@ -298,7 +298,7 @@
                   </div>
                     
                 <div class="progress-group" height="3">
-                    <span style="font-size:100%;" title="Applicants approved by humans but rejected by the system">Incorrectly Rejected (False-)</span>
+                    <span style="font-size:100%;" title="Applicants approved by humans but rejected by the system - FN">Incorrectly Rejected (False-)</span>
                     <span class="progress-number">
                         <b id ="fn"></b></span>
                     <div class="progress sm">
@@ -309,7 +309,7 @@
                   </div>
                     
                  <div class="progress-group">
-                     <span style="font-size:100%;" title="Applicants rejected by both the humans and the system">Correctly Rejected (True-)</span>
+                     <span style="font-size:100%;" title="Applicants rejected by both the humans and the system - TN">Correctly Rejected (True-)</span>
                     <span class="progress-number">
                         <b id ="tn"></b></span>
                     <div class="progress sm">
@@ -320,7 +320,7 @@
                   </div>
                     
                 <div class="progress-group">
-                    <span style="font-size:100%;" title="Applicants rejected by humans but approved by the system">Incorrectly Approved (False+)</span>
+                    <span style="font-size:100%;" title="Applicants rejected by humans but approved by the system - FP">Incorrectly Approved (False+)</span>
                     <span class="progress-number">
                         <b id ="fp"></b></span>
                     <div class="progress sm">
@@ -337,7 +337,7 @@
                 <div class="row">
                 <div class="col-sm-6 col-xs-6">
                   <div class="description-block border-right">
-                    <h5 class="description-header">PRECISION</h5>
+                    <h5 title="The fraction of retrieved applicants that are approved - TP/(TP+FP)" class="description-header">PRECISION</h5>
                       <span class="description-percentage text-green"
                             id="precision"></span>
                   </div>
@@ -345,7 +345,7 @@
                     
                 <div class="col-sm-6 col-xs-6">
                   <div class="description-block border-right">
-                    <h5 class="description-header">RECALL</h5>
+                    <h5 title="The fraction of approved applicants that are retrieved - TP/(TP+FN)"class="description-header">RECALL</h5>
                        <span class="description-percentage text-green"
                             id="recall"></span>
                   </div>
@@ -355,7 +355,7 @@
                 <div class="row">
                 <div class="col-sm-6 col-xs-6">
                   <div class="description-block border-right">
-                     <h5 class="description-header">FSCORE</h5>
+                     <h5 title="The harmonic mean between precision and recall - 2PR/(P+R)" class="description-header">FSCORE</h5>
                      <span class="description-percentage text-green"
                             id="fscore"></span>
                   </div>
@@ -364,7 +364,7 @@
 
                 <div class="col-sm-6 col-xs-6">
                   <div class="description-block">
-                     <h5 class="description-header">ACCURACY</h5>
+                     <h5 title="The fraction of applicants correctly classified - (TP+TN)/Total" class="description-header">ACCURACY</h5>
                        <span class="description-percentage text-green"
                             id="accuracy"></span>
                   </div>
@@ -388,7 +388,7 @@
                 
                 <div class="col-sm-12 col-xs-12">
                       <div class="progress-group">
-                          <span style="font-size:100%;">Match</span>
+                          <span title="How much the features used by humans and by DeepChoice match in the selection process." style="font-size:100%;">Match</span>
                         <span class="progress-number">
                             <b id ="match_features"></b></span>
                         <div class="progress sm">
