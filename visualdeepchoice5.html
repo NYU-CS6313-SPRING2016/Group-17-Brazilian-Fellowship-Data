@@ -469,10 +469,11 @@
         var w1;
         d3.format(".2n")
    
-        d3.csv('https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/csv_data/yelp_scores.csv', function(error, result){
+        d3.csv('https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/csv_data/data2_scores.csv', function(error, result){
             
             //scores_saspe%202.csv
             //yelp_scores.csv
+            //data2_scores.csv
             data = result;
             real_cal(result);
             system_cal(data);
@@ -650,19 +651,19 @@
             
             plotAll("myDiv2",metrics,document.getElementById("col_metrics").offsetWidth,axes_names,1.1,trace_names,plot_colors);
             
+            var maxi = 0;
+            var y_max=0;
             metrics = [th2,tp1,tn1,fp1,fn1];
             axes_names = ["Score/Threshold","Applicants"];
             trace_names = ["True+","True-","False+","False-"];
             plot_colors = ["#1a9850","#66bd63","#f46d43","#d73027"];
             
-            var th2_max = Math.max.apply(Math,th2);
-            var tp1_max = Math.max.apply(Math,tp1);
-            var tn1_max = Math.max.apply(Math,tn1);
-            var fp1_max = Math.max.apply(Math,fp1);
-            var fn1_max = Math.max.apply(Math,fn1);
-            
-            var y_max = Math.max(th2_max,tp1_max,tn1_max,fp1_max,fn1_max);
-            y_max = y_max+(y_max/10);
+            for (var i=0;i<metrics.length;i++){
+                maxi = d3.max(metrics[i]);
+                if (y_max<maxi)
+                    y_max=maxi;
+            }
+            y_max = y_max+(y_max/20);
                     
             plotAll("myDiv3",metrics,document.getElementById("col_metrics").offsetWidth,axes_names,y_max,trace_names,plot_colors);
         }
@@ -803,35 +804,46 @@
             
         }, true);
         function plotBar(values,width){
+            
+
             var histogram = d3.layout.histogram()
-                                .bins(d3.range(0,1.1,0.1));
+                                .bins([-0.000001, 0.10000001, 0.20000102, 0.30000203, 0.40000304, 0.50000405, 0.60000506, 0.70000607, 0.80000708, 0.90000809, 1.0000091]);
             var hist_data = histogram(values);
             
-            //for (var i=0;i<10;i++)
             
             var aux3 = []
-            for (var i=0;i<hist_data.length;i++)
+            var y_max = 0;
+            for (var i=0;i<hist_data.length;i++){
                 aux3[i] = hist_data[i].y;
+                if (y_max<aux3[i])
+                    y_max=aux3[i];
+            }
+            y_max = y_max+y_max/20;
             
-            aux1 = aux3;
+            /*var trace1 = {
+                      y: aux3,
+                      x: d3.range(0,1,0.1),
+                      name: "# Applicants", 
+                      type: "bar", 
+                      uid: "340c31", 
+                    };*/
             
             var trace1 = {
-                      y: aux3,
-                      x: [0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1],
+                      x: values,
                       //autobinx: true,
                       name: "# Applicants", 
-                      //nbinsx: 10, 
-                      type: "bar", 
+                      //nbinsx: 11, 
+                      type: "histogram", 
                       uid: "340c31", 
                       xbins: {
                         end: 1.1, 
-                        size: 0.1, 
-                        start: -0.1
+                        size: 0.10000101, 
+                        start: -0.000001
                       }
                     };
 
             var trace2 = {
-                  y: [250,250],
+                  y: [y_max,y_max],
                   x: [0.5,1],
                   line: {
                     color: "rgb(39, 228, 71)",
@@ -891,12 +903,12 @@
                   xaxis: {
                     showgrid: true,
                     autorange: true,
-                    //range: [0,2],
+                    //range: [0,1],
                     title: "Score/Threshold", 
                     type: "linear",
                     autotick: false,
                     ticks: 'outside',
-                    tick0: 0.1,
+                    tick0: 0,
                     dtick: 0.1,
                     //ticklen: 2,
                     //tickwidth: 2,
