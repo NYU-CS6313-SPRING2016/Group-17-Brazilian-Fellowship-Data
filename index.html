@@ -25,7 +25,7 @@
 <style>
     @import url(http://fonts.googleapis.com/css?family=Share);
 
-    .btn_change {
+    .btn_change{
         font-family: 'Segoe UI', 'Open Sans', Arial, sans-serif;
         background: white;
         color: black;
@@ -38,6 +38,18 @@
         border: 1px solid;
     }   
     
+    .btn_change_data {
+        font-family: 'Segoe UI', 'Open Sans', Arial, sans-serif;
+        background: white;
+        color: black;
+        height:15px;
+        width:40px;
+        font-size: 50%;
+        text-align: center;
+        vertical-align: middle;
+        text-decoration: none;
+        border: 1px solid;
+    } 
 .button_conservative, .button_default, .button_aggressive {
     font-family: 'Segoe UI', 'Open Sans', 'Arial', sans-serif;
     display: block;
@@ -177,9 +189,9 @@
             <div class="box-header with-border">
               <span class="box-title">System Performance  </span>
                 <span>
-                    <button id ="btn_data1" type="button" class="btn_change" onclick="changeData('1'); checkButton('btn_data1');">Data1</button>
-                    <button id ="btn_data2" type="button" class="btn_change" onclick="changeData('2'); checkButton('btn_data2');">Data2</button>
-                    <button id ="btn_data3" type="button" class="btn_change" onclick="changeData('3'); checkButton('btn_data3');">Data3</button>
+                    <button id ="btn_data1" type="button" class="btn_change_data" onclick="changeData('1'); checkButton2('btn_data1');">Data1</button>
+                    <button id ="btn_data2" type="button" class="btn_change_data" onclick="changeData('2'); checkButton2('btn_data2');">Data2</button>
+                    <button id ="btn_data3" type="button" class="btn_change_data" onclick="changeData('3'); checkButton2('btn_data3');">Data3</button>
                 </span>
             </div>
               
@@ -473,6 +485,7 @@
         d3.format(".2n")
    
         function newData(filename) {
+            //window.location.reload();
             first=0;
             threshold = 0.5;
             controlTraces2=[1,1,1,1];
@@ -480,8 +493,6 @@
             real = [{name: "total",value:0},
                 { name: "approved",value:0},
                 { name: "reproved",value:0}];
-            
-            
             
             d3.csv('https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/csv_data/' + filename, function(error, result){
 
@@ -655,7 +666,7 @@
             d3.selectAll("#total")
                 .text(real[0].value + " Total Applicants")
         }
-            function system_cal(result){
+        function system_cal(result){
             var i;
             var system = [{name: "approved", value: 0}, //0
                       {name: "reproved", value: 0},   //1
@@ -723,7 +734,7 @@
                 first=1;
             }
         }
-                function UpdateMeasures(system) {
+        function UpdateMeasures(system) {
             //Show Data
             d3.selectAll("#approved_system")
                 .text(system[0].value + " Applicants");
@@ -779,7 +790,7 @@
                 .text((system[11].value*100).toFixed(0)+"%");
   
         }
-                    function plotAll(element,metrics,width,axes_titles,fixedy,trace_names,plot_colors){
+        function plotAll(element,metrics,width,axes_titles,fixedy,trace_names,plot_colors){
              var trace1 = {
                   y: metrics[1],
                   x: metrics[0],
@@ -920,6 +931,10 @@
             else
                 document.getElementById(element).style.background = "white";
         }
+        function checkButton2(element){
+            d3.selectAll(".btn_change_data").style("background","white")
+            document.getElementById(element).style.background = "gray"
+        }
         function frequency(result) {
             var th1 = d3.range(0,1.1,0.001)
             var tpr =[], fpr =[] , pre=[], fscore = [], acc = [];
@@ -983,7 +998,7 @@
                     
             plotAll("myDiv3",metrics,document.getElementById("col_metrics").offsetWidth,axes_names,y_max,trace_names,plot_colors);
         }
-                    function plotBar(values,width){
+        function plotBar(values,width){
             
 
             var histogram = d3.layout.histogram()
@@ -1113,9 +1128,6 @@
             });
          }
     
-    
-        
-        
         d3.csv('https://s3.amazonaws.com/files-deepchoice/DeepChoice/features.csv', function(error, result){
             d3.select("#featureList2").selectAll("li")
                 .data(result.slice(0,13))
