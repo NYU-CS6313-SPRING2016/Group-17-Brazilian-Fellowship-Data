@@ -468,6 +468,7 @@
         var real = [{name: "total",value:0},
                 { name: "approved",value:0},
                 { name: "reproved",value:0}];
+        var data;
         
         d3.format(".2n")
    
@@ -479,19 +480,27 @@
             real = [{name: "total",value:0},
                 { name: "approved",value:0},
                 { name: "reproved",value:0}];
+            
+            
+            
             d3.csv('https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/csv_data/' + filename, function(error, result){
 
                 //scores_saspe%202.csv
                 //yelp_scores.csv
                 //data2_scores.csv
+                data=result;
                 real_cal(result);
-                system_cal(result);
+                system_cal(data);
                 var values = [];
                 var i;
                 for (i=0;i<result.length;i++)
                     values[i] = result[i].score;
                 plotBar(values,document.getElementById("col_histogram").offsetWidth);
+                setValue(0.5,1,false);
             });
+            
+            
+            //document.getElementById("myInput").value = 0.5;
         }  
         
         //data1();
@@ -607,6 +616,8 @@
         document.addEventListener('DOMContentLoaded', function(){   
             setValue(0.5,1,false);
             document.getElementById("myInput").value = 0.5;
+            newData("scores_saspe%202.csv");
+            
         });      
         window.addEventListener('resize', function() {
             var width = document.getElementById("col_histogram").offsetWidth
@@ -903,13 +914,13 @@
                 setThreshold(d.points[0].x);
             });
         }
-                    function checkButton(element){
+        function checkButton(element){
             if (document.getElementById(element).style.background != "gray")
                 document.getElementById(element).style.background = "gray"
             else
                 document.getElementById(element).style.background = "white";
         }
-                function frequency(result) {
+        function frequency(result) {
             var th1 = d3.range(0,1.1,0.001)
             var tpr =[], fpr =[] , pre=[], fscore = [], acc = [];
             var tp1 =[], tn1=[], fp1=[],fn1=[], th2 =[];
