@@ -463,11 +463,17 @@
         var real = [{name: "total",value:0},
                 { name: "approved",value:0},
                 { name: "reproved",value:0}];
-    
+        var aux1;
+        var max;
+        
         var w1;
         d3.format(".2n")
    
-        d3.csv('https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/csv_data/scores_saspe%202.csv', function(error, result){
+        d3.csv('https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/csv_data/data2_scores.csv', function(error, result){
+            
+            //scores_saspe%202.csv
+            //yelp_scores.csv
+            //data2_scores.csv
             data = result;
             real_cal(result);
             system_cal(data);
@@ -476,6 +482,8 @@
             for (i=0;i<result.length;i++)
                 values[i] = result[i].score;
             plotBar(values,document.getElementById("col_histogram").offsetWidth);
+            max = values;
+            var first;
         })
 
         function changeCurves(val,element){
@@ -551,6 +559,8 @@
                       {name: "total", value: 0}]; //12
 
             for (i = 0; i < result.length; i++) {
+                if (threshold==0)
+                    threshold=-.0001;
                 if (result[i].score>threshold) { //applicant is approved by the system
                     system[0].value++;
                     if (result[i].real==1) {//applicant approved and system correct
@@ -567,11 +577,12 @@
                         system[7].value++;       //applicant approved and system[0] incorrect
                 }
             }
-            if ((system[4].value + system[6].value)==0) 
-                system[8].value=0;
+            if (system[4].value ==0 && system[6].value==0) 
+                system[8].value=1;
             else
                 system[8].value = Math.round((system[4].value)/(system[4].value + system[6].value) * 100) / 100;
-            if ((system[4].value + system[7].value)==0)
+            
+            if (system[4].value ==0 && system[7].value==0)
                 system[9].value=0;
             else
                 system[9].value = Math.round((system[4].value)/(system[4].value + system[7].value) * 100) / 100;
@@ -600,7 +611,7 @@
             }
         }
         function frequency(result) {
-            var th1 = Array.apply(null, Array(200)).map(function (_, i) {return i;});
+            var th1 = d3.range(0,1.1,0.001)
             var tpr =[], fpr =[] , pre=[], fscore = [], acc = [];
             var tp1 =[], tn1=[], fp1=[],fn1=[], th2 =[];
             var tp, tn, fp, fn;
@@ -608,7 +619,9 @@
             for (j=0;j<th1.length;j++) {
                 tp=fp=tn=fn=0;
                 for (i = 0; i < result.length; i++) {
-                    if (result[i].score>(th1[j]/th1.length)) {
+                    if (th1[j]==0)
+                        th1[j]=-0.0001;
+                    if (result[i].score>th1[j]) {
                         if (result[i].real==1)
                             tp++;
                         else
@@ -625,31 +638,40 @@
                 tn1[j] = tn;
                 fp1[j] = fp;
                 fn1[j] = fn;
-                th2[j] = (th1[j]/th1.length);
-                //th2[j] = th2[j].toPrecision(4);
+                
                 tpr[j] = (tp)/(tp+fn);
                 fpr[j] = (1- (tn)/(tn+fp)).toPrecision(2);
                 pre[j] = (tp)/(tp+fp);
                 fscore[j] = (2*pre[j]*tpr[j])/(pre[j]+tpr[j]);
+                
                 acc[j] = ((tp+tn)/(tp+tn+fp+fn)).toPrecision(2);
                 tpr[j] = tpr[j].toPrecision(2);
                 pre[j] = pre[j].toPrecision(2);
                 fscore[j] = fscore[j].toPrecision(2);
             }
             
-            var metrics = [th2,pre,tpr,fscore,acc];
+            var metrics = [th1,pre,tpr,fscore,acc];
             var axes_names = ["Score/Threshold","Performance"];
             var trace_names = ["Precision","Recall","FScore","Accuracy"];
             var plot_colors = ["#377eb8","#984ea3","#a65628","#f781bf"];
             
-            plotAll("myDiv2",metrics,document.getElementById("col_metrics").offsetWidth,axes_names,1,trace_names,plot_colors);
+            plotAll("myDiv2",metrics,document.getElementById("col_metrics").offsetWidth,axes_names,1.1,trace_names,plot_colors);
             
-            metrics = [th2,tp1,tn1,fp1,fn1];
+            var maxi = 0;
+            var y_max=0;
+            metrics = [th1,tp1,tn1,fp1,fn1];
             axes_names = ["Score/Threshold","Applicants"];
             trace_names = ["True+","True-","False+","False-"];
             plot_colors = ["#1a9850","#66bd63","#f46d43","#d73027"];
+            
+            for (var i=0;i<metrics.length;i++){
+                maxi = d3.max(metrics[i]);
+                if (y_max<maxi)
+                    y_max=maxi;
+            }
+            y_max = y_max+(y_max/20);
                     
-            plotAll("myDiv3",metrics,document.getElementById("col_metrics").offsetWidth,axes_names,300,trace_names,plot_colors);
+            plotAll("myDiv3",metrics,document.getElementById("col_metrics").offsetWidth,axes_names,y_max,trace_names,plot_colors);
         }
         function UpdateMeasures(system) {
             //Show Data
@@ -788,21 +810,46 @@
             
         }, true);
         function plotBar(values,width){
-            var trace1 = {
-                      x: values, 
-                      autobinx: false,
+            
+
+            var histogram = d3.layout.histogram()
+                                .bins([-0.000001, 0.10000001, 0.20000102, 0.30000203, 0.40000304, 0.50000405, 0.60000506, 0.70000607, 0.80000708, 0.90000809, 1.0000091]);
+            var hist_data = histogram(values);
+            
+            
+            var aux3 = []
+            var y_max = 0;
+            for (var i=0;i<hist_data.length;i++){
+                aux3[i] = hist_data[i].y;
+                if (y_max<aux3[i])
+                    y_max=aux3[i];
+            }
+            y_max = y_max+y_max/20;
+            
+            /*var trace1 = {
+                      y: aux3,
+                      x: d3.range(0,1,0.1),
                       name: "# Applicants", 
-                      nbinsx: 10, 
+                      type: "bar", 
+                      uid: "340c31", 
+                    };*/
+            
+            var trace1 = {
+                      x: values,
+                      //autobinx: true,
+                      name: "# Applicants", 
+                      //nbinsx: 11, 
                       type: "histogram", 
                       uid: "340c31", 
                       xbins: {
-                        end: 1, 
-                        size: 0.1, 
-                        start: 0
+                        end: 1.1, 
+                        size: 0.10000101, 
+                        start: -0.000001
                       }
                     };
+
             var trace2 = {
-                  y: [250,250],
+                  y: [y_max,y_max],
                   x: [0.5,1],
                   line: {
                     color: "rgb(39, 228, 71)",
@@ -837,7 +884,7 @@
                     bordercolor: "rgba(0, 0, 0, 0)", 
                     borderwidth: 1
                   },
-                  annotations: [
+                  /*annotations: [
                     {x: 0.05,y: 245,xref: 'x',yref: 'y',text: '239',showarrow: false,},
                     {x: 0.15,y: 33,xref: 'x',yref: 'y',text: '27',showarrow: false,},
                     {x: 0.25,y: 17,xref: 'x',yref: 'y',text: '11',showarrow: false,},
@@ -848,12 +895,12 @@
                     {x: 0.75,y: 15,xref: 'x',yref: 'y',text: '9',showarrow: false,},
                     {x: 0.85,y: 15,xref: 'x',yref: 'y',text: '9',showarrow: false,},
                     {x: 0.95,y: 212,xref: 'x',yref: 'y',text: '206',showarrow: false,},
-                  ],
+                  ],*/
                   margin: {
                     r: 30, 
                     t: 20, 
                     b: 40, 
-                    l: 45, 
+                    l: 50, 
                     pad: 1
                   }, 
                   height: 400,  
@@ -862,15 +909,15 @@
                   xaxis: {
                     showgrid: true,
                     autorange: true,
-                    //range: [-0.05,1.05],
+                    //range: [0,1],
                     title: "Score/Threshold", 
                     type: "linear",
                     autotick: false,
                     ticks: 'outside',
                     tick0: 0,
                     dtick: 0.1,
-                    ticklen: 1,
-                    tickwidth: 1,
+                    //ticklen: 2,
+                    //tickwidth: 2,
                   }, 
                   yaxis: {
                     autorange: true,
@@ -988,7 +1035,7 @@
                     r: 30, 
                     t: 20, 
                     b: 40, 
-                    l: 40, 
+                    l: 50, 
                     pad: 1
                   }, 
                   height: 200,
