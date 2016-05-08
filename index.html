@@ -1,237 +1,264 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Visual DeepChoice</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-  <!-- Bootstrap 3.3.6 -->
-  <link rel="stylesheet" href="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/bootstrap/css/bootstrap.min.css">
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/dist/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Visual DeepChoice</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.6 -->
+    <link rel="stylesheet" href="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- jvectormap -->
+    <link rel="stylesheet" href="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/dist/css/skins/_all-skins.min.css">
-  <link rel="stylesheet" href="https://s3.amazonaws.com/files-deepchoice/DeepChoice/slider2.css"/>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<style>
-    @import url(http://fonts.googleapis.com/css?family=Share);
-
-    .btn_change{
-        font-family: 'Segoe UI', 'Open Sans', Arial, sans-serif;
-        background: white;
-        color: black;
-        height:15px;
-        width:40px;
-        font-size: 50%;
-        text-align: center;
-        vertical-align: middle;
-        text-decoration: none;
-        border: 1px solid;
-    }   
-    
-    .btn_change_data {
-        font-family: 'Segoe UI', 'Open Sans', Arial, sans-serif;
-        background: white;
-        color: black;
-        height:15px;
-        width:40px;
-        font-size: 50%;
-        text-align: center;
-        vertical-align: middle;
-        text-decoration: none;
-        border: 1px solid;
-    } 
-.button_conservative, .button_default, .button_aggressive {
-    font-family: 'Segoe UI', 'Open Sans', 'Arial', sans-serif;
-    display: block;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    text-align: center;
-    padding: 10px;
-    margin: 10px 0px 0px 10px;
-    font-size: 90%;
-    text-transform: uppercase;
-    color: #FFF;
-    border: 0px none;
-    outline: 0px none;
-    float:left;
-    }
-    
-    .button_conservative {
-        background: #00ace6;
-    }
-    
-    .button_default {
-        background: #005ce6;
-    }
-    
-    .button_aggressive {
-        background: #333399;
-    }
-
-    .button_aggressive:hover, .button_conservative:hover, .button_default:hover {
-        background: black;
-    }
-    
-    .head_btn{
-        text-transform: uppercase;
-        font-size: 100%;
-    }
-    
-    .bar rect {
-          fill: green;
-          shape-rendering: crispEdges;
+    <link rel="stylesheet" href="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="https://s3.amazonaws.com/files-deepchoice/DeepChoice/slider2.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        @import url(http://fonts.googleapis.com/css?family=Share);
+        
+        .btn_change123 {
+            font-family: 'Segoe UI', 'Open Sans', Arial, sans-serif;
+            background: gray;
+            color: black;
+            height: 15px;
+            ¡ width: 40px;
+            font-size: 50%;
+            text-align: center;
+            vertical-align: middle;
+            text-decoration: none;
+            border: 1px solid;
         }
-
+        
+        .btn_change {
+            font-family: 'Segoe UI', 'Open Sans', Arial, sans-serif;
+            background: white;
+            color: black;
+            height: 15px;
+            ¡ width: 40px;
+            font-size: 50%;
+            text-align: center;
+            vertical-align: middle;
+            text-decoration: none;
+            border: 1px solid;
+        }
+        
+        .btn_change_data, .btn_change_data2, .btn_change_data3 {
+            font-family: 'Segoe UI', 'Open Sans', Arial, sans-serif;
+            background: gray;
+            color: black;
+            height: 15px;
+            width: 40px;
+            font-size: 50%;
+            text-align: center;
+            vertical-align: middle;
+            text-decoration: none;
+            border: 1px solid;
+        }
+        
+        .button_conservative,
+        .button_default,
+        .button_aggressive {
+            font-family: 'Segoe UI', 'Open Sans', 'Arial', sans-serif;
+            display: block;
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            text-align: center;
+            padding: 10px;
+            margin: 10px 0px 0px 10px;
+            font-size: 90%;
+            text-transform: uppercase;
+            color: #FFF;
+            border: 0px none;
+            outline: 0px none;
+            float: left;
+        }
+        
+        .button_conservative {
+            background: #00ace6;
+        }
+        
+        .button_default {
+            background: #005ce6;
+        }
+        
+        .button_aggressive {
+            background: #333399;
+        }
+        
+        .button_aggressive:hover,
+        .button_conservative:hover,
+        .button_default:hover {
+            background: black;
+        }
+        
+        .head_btn {
+            text-transform: uppercase;
+            font-size: 100%;
+        }
+        
+        .bar rect {
+            fill: green;
+            shape-rendering: crispEdges;
+        }
+        
         .bar text {
             fill: #fff;
             font: 100% sans-serif;
         }
-
-        .axis path, .axis line {
-          fill: none;
-          stroke: #000;
-          shape-rendering: crispEdges;
+        
+        .axis path,
+        .axis line {
+            fill: none;
+            stroke: #000;
+            shape-rendering: crispEdges;
         }
-
+        
         g.x.axis {
-                font: 100% sans-serif;
+            font: 100% sans-serif;
         }
- .vcenter {
-    display: inline-block;
-    vertical-align: middle;
-    float: none;
-}
-    
-
+        
+        .vcenter {
+            display: inline-block;
+            vertical-align: middle;
+            float: none;
+        }
     </style>
 </head>
+
 <body class="hold-transition skin-blue sidebar-mini">
-<div class="wrapper">
+    <div class="wrapper">
 
-    <section class="content col-md-10">
+        <section class="content col-md-10">
 
-      <div class="row">
-        
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info-box bg-yellow">
-              <span class="info-box-icon"><i class="fa fa-users"></i></span>
-              <div class="info-box-content">
-                <span class="info-box-text">Approved Real</span>
-                <span class="info-box-number" id="approved_real"></span>
-                <div class="progress">
-                  <div class="progress-bar" id="approved_real_pct"></div>
-                </div>
-                <span class="progress-description" id="total"></span>
-              </div>
-            </div>
-         </div>
-          
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info-box bg-yellow">
-              <span class="info-box-icon"><i class="fa fa-users"></i></span>
-              <div class="info-box-content">
-                <span class="info-box-text">Rejected Real</span>
-                <span class="info-box-number" id="reproved_real"></span>
-                <div class="progress">
-                  <div class="progress-bar" id="reproved_real_pct"></div>
-                </div>
-                <span class="progress-description" id="total"></span>
-              </div>
-            </div>
-         </div>
+            <div class="row">
 
-        <div class="clearfix visible-sm-block"></div>
-
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info-box bg-aqua">
-              <span class="info-box-icon"><img src="https://s3.amazonaws.com/files-deepchoice/DeepChoice/dpicon.png" width="60" height="60"></span>
-              <div class="info-box-content">
-                <span class="info-box-text">Approved System</span>
-                <span class="info-box-number" id="approved_system"></span>
-                <div class="progress">
-                  <div class="progress-bar" id="approved_system_pct"></div>
-                </div>
-                <span class="progress-description" id="total"></span>
-              </div>
-            </div>
-         </div>
-          
-        <div class="col-md-3 col-sm-6 col-xs-12">
-            <div class="info-box bg-aqua">
-              <span class="info-box-icon"><img src="https://s3.amazonaws.com/files-deepchoice/DeepChoice/dpicon.png" width="60" height="60"></span>
-              <div class="info-box-content">
-                <span class="info-box-text">Rejected System</span>
-                <span class="info-box-number" id="reproved_system"></span>
-                <div class="progress">
-                  <div class="progress-bar" id="reproved_system_pct"></div>
-                </div>
-                <span class="progress-description" id="total"></span>
-              </div>
-            </div>
-         </div>
-          
-          
-      </div>
-        
-      <div class="row">
-        <div class="col-md-12">
-          <div class="box">
-            <div class="box-header with-border">
-              <span class="box-title">System Performance  </span>
-                <span>
-                    <button id ="btn_data1" type="button" class="btn_change_data" onclick="changeData('1'); checkButton2('btn_data1');">Data1</button>
-                    <button id ="btn_data2" type="button" class="btn_change_data" onclick="changeData('2'); checkButton2('btn_data2');">Data2</button>
-                    <button id ="btn_data3" type="button" class="btn_change_data" onclick="changeData('3'); checkButton2('btn_data3');">Data3</button>
-                </span>
-            </div>
-              
-            <div class="box-body">
-              <div class="row">
-                <div class="col-md-9">  
-                    
-             
-                        <div class="col-md-5" id="col_histogram">
-                                <div id="myDiv"></div>
-                        </div>
-                    
-                        <div class="col-md-7" id="col_metrics">
-                            <div class="row">   
-                               <div align="center">
-                                   <button id ="preb" type="button" class="btn_change" onclick="changeCurves('0','myDiv2'); checkButton('preb');">Precision</button>
-                                   <button id ="recb" type="button" class="btn_change" onclick="changeCurves('1','myDiv2'); checkButton('recb');">Recall</button>
-                                   <button id ="fscb" type="button" class="btn_change" onclick="changeCurves('2','myDiv2'); checkButton('fscb');">Fscore</button>
-                                   <button id ="accb" type="button" class="btn_change" onclick="changeCurves('3','myDiv2'); checkButton('accb');">Accuracy</button>
-                                   </div>
-                                <div id="myDiv2"></div>
-                            
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-yellow">
+                        <span class="info-box-icon"><i class="fa fa-users"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Approved Real</span>
+                            <span class="info-box-number" id="approved_real"></span>
+                            <div class="progress">
+                                <div class="progress-bar" id="approved_real_pct"></div>
                             </div>
-                            <div class="row">
-                             <div align="center">
-                                   <button id ="tpb" type="button" class="btn_change" onclick="changeCurves('0','myDiv3'); checkButton('tpb');">True+</button>
-                                   <button id ="tnb" type="button" class="btn_change" onclick="changeCurves('1','myDiv3'); checkButton('tnb');">True-</button>
-                                   <button id ="fpb" type="button" class="btn_change" onclick="changeCurves('2','myDiv3'); checkButton('fpb');">False+</button>
-                                   <button id ="fnb" type="button" class="btn_change" onclick="changeCurves('3','myDiv3'); checkButton('fnb');">False-</button>
-                                   </div>
-                                <div id="myDiv3"></div>
-                            </div>      
+                            <span class="progress-description" id="total"></span>
                         </div>
-                    
-                        
-                    
-            <div class="box-footer">                
-                    
-                    <div class="col-md-6" align="center">
-                        <span class="head_btn">THRESHOLD
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-yellow">
+                        <span class="info-box-icon"><i class="fa fa-users"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Rejected Real</span>
+                            <span class="info-box-number" id="reproved_real"></span>
+                            <div class="progress">
+                                <div class="progress-bar" id="reproved_real_pct"></div>
+                            </div>
+                            <span class="progress-description" id="total"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clearfix visible-sm-block"></div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-aqua">
+                        <span class="info-box-icon"><img src="https://s3.amazonaws.com/files-deepchoice/DeepChoice/dpicon.png" width="60" height="60"></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Approved System</span>
+                            <span class="info-box-number" id="approved_system"></span>
+                            <div class="progress">
+                                <div class="progress-bar" id="approved_system_pct"></div>
+                            </div>
+                            <span class="progress-description" id="total"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-aqua">
+                        <span class="info-box-icon"><img src="https://s3.amazonaws.com/files-deepchoice/DeepChoice/dpicon.png" width="60" height="60"></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Rejected System</span>
+                            <span class="info-box-number" id="reproved_system"></span>
+                            <div class="progress">
+                                <div class="progress-bar" id="reproved_system_pct"></div>
+                            </div>
+                            <span class="progress-description" id="total"></span>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="box">
+                        <div class="box-header with-border">
+                            <span class="box-title">Datasets</span>
+                            <span>
+                                <button id ="btn_data1" type="button" class="btn_change_data" onclick="changeData('1'); checkButton2('btn_data1',1);">Data1</button>
+                                <button id ="btn_data2" type="button" class="btn_change_data" onclick="changeData('2'); checkButton2('btn_data2',1);">Data2</button>
+                                <button id ="btn_data3" type="button" class="btn_change_data" onclick="changeData('3'); checkButton2('btn_data3',1);">Data3</button>
+                            </span>
+                            <span style="float:right;">
+                                <button id ="btn_data4" type="button" class="btn_change_data2" onclick="high_measures(0); checkButton2('btn_data4',2);">Recall</button>
+                                <button id ="btn_data5" type="button" class="btn_change_data2" onclick="high_measures(1); checkButton2('btn_data5',2);">Precision</button>
+                                <button id ="btn_data6" type="button" class="btn_change_data2" onclick="high_measures(2); checkButton2('btn_data6',2);">Fscore</button>
+                                <button id ="btn_data7" type="button" class="btn_change_data2" onclick="high_measures(3); checkButton2('btn_data7',2);">Accuracy</button>
+                            </span>
+                            <span style="float:right;" class="box-title">Maximum Values for:_</span>
+                        </div>
+
+                        <div class="box-body">
+                            <div class="row">
+                                <div class="col-md-9">
+
+
+                                    <div class="col-md-5" id="col_histogram">
+                                        <div id="myDiv"></div>
+                                    </div>
+
+                                    <div class="col-md-7" id="col_metrics">
+                                        <div class="row">
+                                            <div align="center">
+                                                <button id="preb" type="button" class="btn_change" onclick="changeCurves('0','myDiv2'); checkButton('preb');">Precision</button>
+                                                <button id="recb" type="button" class="btn_change" onclick="changeCurves('1','myDiv2'); checkButton('recb');">Recall</button>
+                                                <button id="fscb" type="button" class="btn_change" onclick="changeCurves('2','myDiv2'); checkButton('fscb');">Fscore</button>
+                                                <button id="accb" type="button" class="btn_change" onclick="changeCurves('3','myDiv2'); checkButton('accb');">Accuracy</button>
+                                            </div>
+                                            <div id="myDiv2"></div>
+
+                                        </div>
+                                        <div class="row">
+                                            <div align="center">
+                                                <button id="tpb" type="button" class="btn_change" onclick="changeCurves('0','myDiv3'); checkButton('tpb');">True+</button>
+                                                <button id="tnb" type="button" class="btn_change" onclick="changeCurves('1','myDiv3'); checkButton('tnb');">True-</button>
+                                                <button id="fpb" type="button" class="btn_change" onclick="changeCurves('2','myDiv3'); checkButton('fpb');">False+</button>
+                                                <button id="fnb" type="button" class="btn_change" onclick="changeCurves('3','myDiv3'); checkButton('fnb');">False-</button>
+                                            </div>
+                                            <div id="myDiv3"></div>
+                                        </div>
+                                    </div>
+
+
+
+                                    <div class="box-footer">
+
+                                        <div class="col-md-6" align="center">
+                                            <span class="head_btn">THRESHOLD
                             <input type=text
                                    id=myInput
                                    style="width:80px"
@@ -240,944 +267,1136 @@
                                    onchange="showValue(this.value,1,false);
                                                 setThreshold(this.value);">
                         </span>
-                        
-                        <div class="slidershell" id="slidershell1">
-                                <div class="sliderfill" id="sliderfill1"></div>
-                                <div class="slidertrack" id="slidertrack1"></div>
-                                <div class="sliderthumb" id="sliderthumb1"></div>
-                                <div class="slidervalue" id="slidervalue1">0</div>
-                                <input class="slider"
-                                       id="slider1" 
-                                       type="range" 
-                                       min="0" 
-                                       max="1" 
-                                       value="0.5"
-                                       step="0.001"
-                                       oninput="showValue(this.value,1,false);
-                                                setThreshold(this.value);"
-                                       onchange="showValue(this.value,1,false);
-                                                setThreshold(this.value);"
-                                />
-                            </div>
-                        
-                    </div>
-                    <div class="cold-md-6" align="center";>
-                        <div class="head_btn">Pre Defined</div>
-                        <button type="button" class="button_conservative" onclick="setThreshold('0.2'); showValue(0.2,1,false);">Conservative</button>
-                        <button type="button" class="button_default" onclick="setThreshold('0.5'); showValue(0.5,1,false);">Balanced</button>
-                        <button type="button" class="button_aggressive" onclick="setThreshold('0.9'); showValue(0.9,1,false);">Aggresive</button>
-                    </div>
 
-            </div>
-                    
-                
-                    
-                </div>
-                <div class="col-md-3">
-                <p class="text-center">
-                    <strong>General Measures</strong>
-                </p>
-                <div class="progress-group">
-                    <span class="progress-text">Correct</span>
-                    <span class="progress-number">
+                                            <div class="slidershell" id="slidershell1">
+                                                <div class="sliderfill" id="sliderfill1"></div>
+                                                <div class="slidertrack" id="slidertrack1"></div>
+                                                <div class="sliderthumb" id="sliderthumb1"></div>
+                                                <div class="slidervalue" id="slidervalue1">0</div>
+                                                <input class="slider" id="slider1" type="range" min="0" max="1" value="0.5" step="0.001" oninput="showValue(this.value,1,false);
+                                                setThreshold(this.value);" onchange="showValue(this.value,1,false);
+                                                setThreshold(this.value);" />
+                                            </div>
+
+                                        </div>
+                                        <div class="cold-md-6" align="center" ;>
+                                            <div class="head_btn">Pre Defined</div>
+                                            <button type="button" class="button_conservative" onclick="setThreshold('0.2'); showValue(0.2,1,false);">Conservative</button>
+                                            <button type="button" class="button_default" onclick="setThreshold('0.5'); showValue(0.5,1,false);">Balanced</button>
+                                            <button type="button" class="button_aggressive" onclick="setThreshold('0.9'); showValue(0.9,1,false);">Aggressive</button>
+                                        </div>
+
+                                    </div>
+
+
+
+                                </div>
+                                <div class="col-md-3">
+                                    <p class="text-center">
+                                        <strong>General Measures</strong>
+                                    </p>
+                                    <div class="progress-group">
+                                        <span class="progress-text">Correct</span>
+                                        <span class="progress-number">
                         <b id ="correct"></b></span>
-                    <div class="progress sm">
-                        <div class="progress-bar progress-bar-green" 
-                           id ="correct_pct">
-                        </div>
-                    </div>
-                  </div>
-                    
-                <div class="progress-group">
-                    <span class="progress-text">Incorrect</span>
-                    <span class="progress-number">
+                                        <div class="progress sm">
+                                            <div class="progress-bar progress-bar-green" id="correct_pct">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="progress-group">
+                                        <span class="progress-text">Incorrect</span>
+                                        <span class="progress-number">
                         <b id ="incorrect"></b></span>
-                    <div class="progress sm">
-                        <div class="progress-bar progress-bar-red" 
-                           id ="incorrect_pct">
-                        </div>
-                    </div>
-                  </div>
-                    
-                    <p class="text-center">
-                    <strong>Rates</strong>
-                  </p>
+                                        <div class="progress sm">
+                                            <div class="progress-bar progress-bar-red" id="incorrect_pct">
+                                            </div>
+                                        </div>
+                                    </div>
 
-                  <div class="progress-group">
-                      <span id="tph" style="font-size:100%;" title="Applicants approved by both the humans and the system - TP">Correctly Approved (True+)</span>
-                    <span class="progress-number">
+                                    <p class="text-center">
+                                        <strong>Rates</strong>
+                                    </p>
+
+                                    <div class="progress-group">
+                                        <span id="tph" style="font-size:100%;" title="Applicants approved by both the humans and the system - TP">Correctly Approved (True+)</span>
+                                        <span class="progress-number">
                         <b id ="tp"></b></span>
-                    <div class="progress sm">
-                        <div class="progress-bar progress-bar-orange" 
-                           id ="tp_pct">
-                        </div>
-                    </div>
-                  </div>
-                    
-                <div class="progress-group" height="3">
-                    <span style="font-size:100%;" title="Applicants approved by humans but rejected by the system - FN">Incorrectly Rejected (False-)</span>
-                    <span class="progress-number">
+                                        <div class="progress sm">
+                                            <div class="progress-bar progress-bar-orange" id="tp_pct">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="progress-group" height="3">
+                                        <span style="font-size:100%;" title="Applicants approved by humans but rejected by the system - FN">Incorrectly Rejected (False-)</span>
+                                        <span class="progress-number">
                         <b id ="fn"></b></span>
-                    <div class="progress sm">
-                        <div class="progress-bar progress-bar-blue" 
-                           id ="fn_pct">
-                        </div>
-                    </div>
-                  </div>
-                    
-                 <div class="progress-group">
-                     <span style="font-size:100%;" title="Applicants rejected by both the humans and the system - TN">Correctly Rejected (True-)</span>
-                    <span class="progress-number">
+                                        <div class="progress sm">
+                                            <div class="progress-bar progress-bar-blue" id="fn_pct">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="progress-group">
+                                        <span style="font-size:100%;" title="Applicants rejected by both the humans and the system - TN">Correctly Rejected (True-)</span>
+                                        <span class="progress-number">
                         <b id ="tn"></b></span>
-                    <div class="progress sm">
-                        <div class="progress-bar progress-bar-blue" 
-                           id ="tn_pct">
-                        </div>
-                    </div>
-                  </div>
-                    
-                <div class="progress-group">
-                    <span style="font-size:100%;" title="Applicants rejected by humans but approved by the system - FP">Incorrectly Approved (False+)</span>
-                    <span class="progress-number">
+                                        <div class="progress sm">
+                                            <div class="progress-bar progress-bar-blue" id="tn_pct">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="progress-group">
+                                        <span style="font-size:100%;" title="Applicants rejected by humans but approved by the system - FP">Incorrectly Approved (False+)</span>
+                                        <span class="progress-number">
                         <b id ="fp"></b></span>
-                    <div class="progress sm">
-                        <div class="progress-bar progress-bar-blue" 
-                           id ="fp_pct">
-                        </div>
-                    </div>
-                  </div>
-                    
-                <p class="text-center">
-                    <strong>Performance Measures</strong>
-                  </p>
-                    
-                <div class="row">
-                <div class="col-sm-6 col-xs-6">
-                  <div class="description-block border-right">
-                    <h5 title="The fraction of retrieved applicants that are approved - TP/(TP+FP)" class="description-header">PRECISION</h5>
-                      <span class="description-percentage text-green"
-                            id="precision"></span>
-                  </div>
-                </div>
-                    
-                <div class="col-sm-6 col-xs-6">
-                  <div class="description-block border-right">
-                    <h5 title="The fraction of approved applicants that are retrieved - TP/(TP+FN)"class="description-header">RECALL</h5>
-                       <span class="description-percentage text-green"
-                            id="recall"></span>
-                  </div>
-    
-                </div>
-                    </div>    
-                <div class="row">
-                <div class="col-sm-6 col-xs-6">
-                  <div class="description-block border-right">
-                     <h5 title="The harmonic mean between precision and recall - 2PR/(P+R)" class="description-header">FSCORE</h5>
-                     <span class="description-percentage text-green"
-                            id="fscore"></span>
-                  </div>
+                                        <div class="progress sm">
+                                            <div class="progress-bar progress-bar-blue" id="fp_pct">
+                                            </div>
+                                        </div>
+                                    </div>
 
-                </div>
+                                    <p class="text-center">
+                                        <strong>Performance Measures</strong>
+                                    </p>
 
-                <div class="col-sm-6 col-xs-6">
-                  <div class="description-block">
-                     <h5 title="The fraction of applicants correctly classified - (TP+TN)/Total" class="description-header">ACCURACY</h5>
-                       <span class="description-percentage text-green"
-                            id="accuracy"></span>
-                  </div>
-                </div>
-                    
-              </div> 
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-          
-</section>
-    <section class="content col-md-2">
-        <div class="box">
-            <div class="box-header with-border">
-              <div class="box-title">Features</div>
-            </div>
-            <div class="box-body" style="padding: 0 0 0 0">
-                
-                <div class="col-sm-12 col-xs-12">
-                      <div class="progress-group">
-                          <span title="How much the features used by humans and by DeepChoice match in the selection process." style="font-size:100%;">Match</span>
-                        <span class="progress-number">
-                            <b id ="match_features"></b></span>
-                        <div class="progress sm">
-                            <div class="progress-bar progress-bar-blue" id ="match_features_pct">
+                                    <div class="row">
+                                        <div class="col-sm-6 col-xs-6">
+                                            <div class="description-block border-right">
+                                                <h5 title="The fraction of retrieved applicants that are approved - TP/(TP+FP)" class="description-header">PRECISION</h5>
+                                                <span class="description-percentage text-green" id="precision"></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-6 col-xs-6">
+                                            <div class="description-block border-right">
+                                                <h5 title="The fraction of approved applicants that are retrieved - TP/(TP+FN)" class="description-header">RECALL</h5>
+                                                <span class="description-percentage text-green" id="recall"></span>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-6 col-xs-6">
+                                            <div class="description-block border-right">
+                                                <h5 title="The harmonic mean between precision and recall - 2PR/(P+R)" class="description-header">FSCORE</h5>
+                                                <span class="description-percentage text-green" id="fscore"></span>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-sm-6 col-xs-6">
+                                            <div class="description-block">
+                                                <h5 title="The fraction of applicants correctly classified - (TP+TN)/Total" class="description-header">ACCURACY</h5>
+                                                <span class="description-percentage text-green" id="accuracy"></span>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                      </div>
+                    </div>
                 </div>
-            
-                <div class="col-sm-12 col-xs-12">
-                      <div class="description-block">
-                          <h5 class="description-header" style="text-align:left;">Features Company</h5>
-                          <br>
-                         <h5 class="description-header" id="featureList" style="text-align:left; font-size: 100%"></h5>
-                      </div>
-                </div>
-
-
-                <div class="col-sm-12 col-xs-12">
-                      <div class="description-block">
-                          <h5 class="description-header" style="text-align:left;">Features System</h5>
-                          <br>
-                         <h5 class="description-header" id="featureList2" style="text-align:left; font-size: 100%"></h5>
-                      </div>
-                </div>
-                
-                
-                
             </div>
-        </div>
-        
-    </section>
-   
-    
-</div>
 
-<!-- REQUIRED JS SCRIPTS -->
-    
-<!-- jQuery 2.2.0 -->
-<script src="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/plugins/jQuery/jQuery-2.2.0.min.js"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/bootstrap/js/bootstrap.min.js"></script>
-<!-- FastClick -->
-<script src="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/dist/js/app.min.js"></script>
-<!-- Sparkline -->
-<script src="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/plugins/sparkline/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- SlimScroll 1.3.0 -->
-<script src="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        </section>
+        <section class="content col-md-2">
+            <div class="box">
+                <div class="box-header with-border">
+                    <div class="box-title">Features</div>
+                </div>
+                <div class="box-body" style="padding: 0 0 0 0">
 
-<!-- ChartJS 1.0.1 -->
-<!--<script src="https://s3.amazonaws.com/front-end-visual-deepchoice/adminlte/plugins/chartjs/Chart.min.js"></script>-->
-<script src="https://rawgit.com/nnnick/Chart.js/v1.0.2/Chart.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<!--<script src="https://s3.amazonaws.com/front-end-visual-deepchoice/adminlte/dist/js/pages/dashboard2.js"></script>
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="progress-group">
+                            <span title="How much the features used by humans and by DeepChoice match in the selection process." style="font-size:100%;">Match</span>
+                            <span class="progress-number">
+                            <b id ="match_features"></b></span>
+                            <div class="progress sm">
+                                <div class="progress-bar progress-bar-blue" id="match_features_pct">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="description-block">
+                            <h5 class="description-header" style="text-align:left;">Features Company</h5>
+                            <br>
+                            <h5 class="description-header" id="featureList" style="text-align:left; font-size: 100%"></h5>
+                        </div>
+                    </div>
+
+
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="description-block">
+                            <h5 class="description-header" style="text-align:left;">Features System</h5>
+                            <br>
+                            <h5 class="description-header" id="featureList2" style="text-align:left; font-size: 100%"></h5>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </section>
+
+
+    </div>
+
+    <!-- REQUIRED JS SCRIPTS -->
+
+    <!-- jQuery 2.2.0 -->
+    <script src="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/plugins/jQuery/jQuery-2.2.0.min.js"></script>
+    <!-- Bootstrap 3.3.6 -->
+    <script src="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/bootstrap/js/bootstrap.min.js"></script>
+    <!-- FastClick -->
+    <script src="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/plugins/fastclick/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/dist/js/app.min.js"></script>
+    <!-- Sparkline -->
+    <script src="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/plugins/sparkline/jquery.sparkline.min.js"></script>
+    <!-- jvectormap -->
+    <script src="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script src="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- SlimScroll 1.3.0 -->
+    <script src="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+
+    <!-- ChartJS 1.0.1 -->
+    <!--<script src="https://s3.amazonaws.com/front-end-visual-deepchoice/adminlte/plugins/chartjs/Chart.min.js"></script>-->
+    <script src="https://rawgit.com/nnnick/Chart.js/v1.0.2/Chart.min.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <!--<script src="https://s3.amazonaws.com/front-end-visual-deepchoice/adminlte/dist/js/pages/dashboard2.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/dist/js/demo.js"></script>
- <script src="https://s3.amazonaws.com/files-deepchoice/DeepChoice/Chart.bundle.js"></script>
-<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>  dont use this-->
+    <script src="https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/dist/js/demo.js"></script>
+    <script src="https://s3.amazonaws.com/files-deepchoice/DeepChoice/Chart.bundle.js"></script>
+    <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>  dont use this-->
 
-</body>       
-<script src= "http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
-<script  type="text/javascript">
-        var threshold = 0.5;
-        var controlTraces1=[1,1,1,1];
-        var controlTraces2=[1,1,1,1];
-        var first=0;
-        var real = [{name: "total",value:0},
-                { name: "approved",value:0},
-                { name: "reproved",value:0}];
-        var data;
-        
-        d3.format(".2n")
-   
-        function newData(filename) {
-            //window.location.reload();
-            first=0;
-            threshold = 0.5;
-            controlTraces2=[1,1,1,1];
-            controlTraces1=[1,1,1,1];
-            real = [{name: "total",value:0},
-                { name: "approved",value:0},
-                { name: "reproved",value:0}];
-            
-            d3.csv('https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/csv_data/' + filename, function(error, result){
+</body>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+    var threshold = 0.5;
+    var controlTraces1 = [1, 1, 1, 1];
+    var controlTraces2 = [1, 1, 1, 1];
+    var first = 0;
+    var max_thresholds = [0,0,0,0];
+    var indexOfMaxValue=[];
+    var test=[];
+    var real = [{
+            name: "total",
+            value: 0
+        },
+        {
+            name: "approved",
+            value: 0
+        },
+        {
+            name: "reproved",
+            value: 0
+        }];
+    var data;
 
-                //scores_saspe%202.csv
-                //yelp_scores.csv
-                //data2_scores.csv
-                data=result;
-                real_cal(result);
-                system_cal(data);
-                var values = [];
-                var i;
-                for (i=0;i<result.length;i++)
-                    values[i] = result[i].score;
-                plotBar(values,document.getElementById("col_histogram").offsetWidth);
-                setValue(0.5,1,false);
-            });
-            
-            
-            //document.getElementById("myInput").value = 0.5;
-        }  
-        
-        //data1();
+    d3.format(".2n")
     
-        function changeData(option){
-            if (option==1)
-                newData("scores_saspe%202.csv");
-            if (option==2)
-                newData("yelp_scores.csv");
-            if (option==3)
-                newData("data2_scores.csv");
-        }
-        function changeCurves(val,element){
-            var update;
-            
-            if (element=="myDiv2") 
-                if (controlTraces1[val]==1){
-                   update = {visible: false};
-                   Plotly.restyle(element, update,[val]);
-                   controlTraces1[val]=0;
-                }
-                else {
-                   update = {visible: true};
-                   Plotly.restyle(element, update,[val]);
-                   controlTraces1[val]=1;
-                }
-            else
-                if (controlTraces2[val]==1){
-                   update = {visible: false};
-                   Plotly.restyle(element, update,[val]);
-                   controlTraces2[val]=0;
-                }
-                else {
-                   update = {visible: true};
-                   Plotly.restyle(element, update,[val]);
-                   controlTraces2[val]=1;
-                }
-        }
-        function setThreshold(newValue) {
-                threshold = newValue;
-                d3.selectAll("#bloc2")
-                    .data(newValue)
-                    .text(newValue)
-                system_cal(data);
-            }
-        function showValue(val,slidernum,vertical) {
-            /* setup variables for the elements of our slider */
-            
-            if (val<0) 
-                val=0;
-            if (val>1)
-                val=1;
-            
-            var thumb = document.getElementById("sliderthumb" + slidernum);
-            var shell = document.getElementById("slidershell" + slidernum);
-            var track = document.getElementById("slidertrack" + slidernum);
-            var fill = document.getElementById("sliderfill" + slidernum);
-            var rangevalue = document.getElementById("slidervalue" + slidernum);
-            var slider = document.getElementById("slider" + slidernum);
+    function high_measures(option){
+        setThreshold(max_thresholds[option]);
+        showValue(max_thresholds[option],1,false);
+    }
 
-            var pc = val/(slider.max - slider.min); /* the percentage slider value */
-            var thumbsize = 40; /* must match the thumb size in your css */
-            var bigval = 300; /* widest or tallest value depending on orientation */
-            var smallval = 40; /* narrowest or shortest value depending on orientation */
-            var tracksize = bigval - thumbsize;
-            var fillsize = 35;
-            var filloffset = 10;
-            var bordersize = 2;
-            var loc = vertical ? (1 - pc) * tracksize : pc * tracksize;
-            var degrees = 360 * pc;
-            var rotation = "rotate(" + degrees + "deg)";
+    function newData(filename) {
+        //window.location.reload();
+        first = 0;
+        threshold = 0.5;
+        controlTraces2 = [1, 1, 1, 1];
+        controlTraces1 = [1, 1, 1, 1];
+        real = [{
+                name: "total",
+                value: 0
+            },
+            {
+                name: "approved",
+                value: 0
+            },
+            {
+                name: "reproved",
+                value: 0
+            }];
 
-            rangevalue.innerHTML = val;
-
-            thumb.style.webkitTransform = rotation;
-            thumb.style.MozTransform = rotation;
-            thumb.style.msTransform = rotation;
-
-            fill.style.opacity = pc + 0.2 > 1 ? 1 : pc + 0.2;
-
-            rangevalue.style.top = (vertical ? loc : 0) + "px";
-            rangevalue.style.left = (vertical ? 0 : loc) + "px";
-            thumb.style.top =  (vertical ? loc : 0) + "px";
-            thumb.style.left = (vertical ? 0 : loc) + "px";
-            fill.style.top = (vertical ? loc + (thumbsize/2) : filloffset + bordersize) + "px";
-            fill.style.left = (vertical ? filloffset + bordersize : 0) + "px";
-            fill.style.width = (vertical ? fillsize : loc + (thumbsize/2)) + "px";
-            fill.style.height = (vertical ? bigval - filloffset - fillsize - loc : fillsize) + "px";
-            shell.style.height = (vertical ? bigval : smallval) + "px";
-            shell.style.width = (vertical ? smallval : bigval) + "px";
-            track.style.height = (vertical ? bigval - 4 : fillsize) + "px"; /* adjust for border */
-            track.style.width = (vertical ? fillsize : bigval - 4) + "px"; /* adjust for border */
-            track.style.left = (vertical ? filloffset + bordersize : 0) + "px";
-            track.style.top = (vertical ? 0 : filloffset + bordersize) + "px";
-            
-            var update = {x: [[Number(val),1]]}
-            Plotly.restyle('myDiv', update,[1])   
-            
-            update = {x: [[Number(val),Number(val)]]}
-            Plotly.restyle('myDiv2', update,[4])
-            
-            update = {x: [[Number(val),Number(val)]]}
-            Plotly.restyle('myDiv3', update,[4])
-            
-            document.getElementById("myInput").value = val;
-        }
-        
-        function setValue(val,num,vertical) {
-            document.getElementById("slider"+num).value = val;
-            showValue(val,num,vertical);
-        }
-    
-        document.addEventListener('DOMContentLoaded', function(){   
-            setValue(0.5,1,false);
-            document.getElementById("myInput").value = 0.5;
-            newData("scores_saspe%202.csv");
-            
-        });      
-        window.addEventListener('resize', function() {
-            var width = document.getElementById("col_histogram").offsetWidth
-            var update = {width:width};
-            Plotly.relayout('myDiv', update);
-            
-            width = document.getElementById("col_metrics").offsetWidth
-            update = {width:width};
-            Plotly.relayout('myDiv2', update);
-            Plotly.relayout('myDiv3', update);
-            
-        }, true);
-    
-    
-        function real_cal(result) {
-            for (i = 0; i < result.length; i++) {
-               if (result[i].real==1)
-                   real[1].value++;
-                else
-                    real[2].value++;
-            }
-            real[0].value = real[1].value+real[2].value;
-            
-            d3.selectAll("#approved_real")
-                .text(real[1].value + " Applicants");
-            d3.selectAll("#reproved_real")
-                .text(real[2].value + " Applicants");
-            
-            d3.selectAll("#approved_real_pct")
-                .style("width",(real[1].value/real[0].value)*100 + "%");
-            
-            d3.selectAll("#reproved_real_pct")
-                .style("width", (real[2].value/real[0].value)*100 + "%");
-            
-            d3.selectAll("#total")
-                .text(real[0].value + " Total Applicants")
-        }
-        function system_cal(result){
+        d3.csv('https://rawgit.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/gh-pages/csv_data/' + filename, function (error, result) {
+            data = result;
+            real_cal(result);
+            system_cal(data);
+            var values = [];
             var i;
-            var system = [{name: "approved", value: 0}, //0
-                      {name: "reproved", value: 0},   //1
-                      {name: "correct", value: 0},    //2
-                      {name: "incorrect", value: 0},  //3
-                      {name: "tp", value: 0},         //4
-                      {name: "tn", value: 0},         //5
-                      {name: "fp", value: 0},         //6
-                      {name: "fn", value: 0},         //7
-                      {name: "precision", value: 0},  //8
-                      {name: "recall", value: 0},     //9
-                      {name: "fscore", value: 0},     //10
-                      {name: "accuracy", value: 0},   //11
-                      {name: "total", value: 0}]; //12
+            for (i = 0; i < result.length; i++)
+                values[i] = result[i].score;
+            plotBar(values, document.getElementById("col_histogram").offsetWidth);
+            setValue(0.5, 1, false);
+        });
 
-            for (i = 0; i < result.length; i++) {
-                if (threshold==0)
-                    threshold=-.0001;
-                if (result[i].score>threshold) { //applicant is approved by the system
-                    system[0].value++;
-                    if (result[i].real==1) {//applicant approved and system correct
-                        system[4].value++;
-                    }
-                    else
-                        system[6].value++;       //applicant reproved and system incorrect
-                }
-                else {                      //applicant is reproved by the system
-                    system[1].value++;
-                    if (result[i].real==0) //applicant reproved and system correct
-                        system[5].value++;
-                    else
-                        system[7].value++;       //applicant approved and system[0] incorrect
-                }
-            }
-            if (system[4].value ==0 && system[6].value==0) 
-                system[8].value=1;
-            else
-                system[8].value = Math.round((system[4].value)/(system[4].value + system[6].value) * 100) / 100;
-            
-            if (system[4].value ==0 && system[7].value==0)
-                system[9].value=0;
-            else
-                system[9].value = Math.round((system[4].value)/(system[4].value + system[7].value) * 100) / 100;
 
-            system[2].value = system[4].value+ system[5].value;
-            system[3].value = system[6].value + system[7].value;
+        //document.getElementById("myInput").value = 0.5;
+    }
 
-            if ((system[8].value + system[9].value)==0) 
-                system[10].value = 0;
-            else
-                system[10].value = Math.round((2*system[8].value*system[9].value)/(system[8].value + system[9].value) * 100) / 100;
+    function changeData(option) {
+        if (option == 1)
+            newData("scores_saspe%202.csv");
+        if (option == 2)
+            newData("yelp_scores.csv");
+        if (option == 3)
+            newData("data2_scores.csv");
+    }
 
-            if ((system[2].value+system[3].value)==0) 
-                system[11].value =0;
-            else
-                system[11].value = Math.round((system[2].value)/(system[2].value+system[3].value) * 100) / 100;
-            
-            system[12].value = system[0].value + system[1].value;
-            
-            UpdateMeasures(system);
-            
-            //first time
-            if (first==0) {
-                frequency(result);
-                first=1;
-            }
-        }
-        function UpdateMeasures(system) {
-            //Show Data
-            d3.selectAll("#approved_system")
-                .text(system[0].value + " Applicants");
-            d3.selectAll("#reproved_system")
-                .text(system[1].value + " Applicants");
-            
-            
-            d3.selectAll("#approved_system_pct")
-                .style("width",(system[0].value/system[12].value)*100 + "%");
-            
-            d3.selectAll("#reproved_system_pct")
-                .style("width", (system[1].value/system[12].value)*100 + "%");
-            
-            
-            d3.selectAll("#correct")
-                .text(system[2].value+"/"+system[12].value);
-            d3.selectAll("#correct_pct")
-                .style("width",((system[2].value/system[12].value)*100)+"%");
-            d3.selectAll("#incorrect")
-                .text(system[3].value+"/"+system[12].value);
-            d3.selectAll("#incorrect_pct")
-                .style("width",((system[3].value/system[12].value)*100)+"%");
-            
-            d3.selectAll("#tp")
-                .text(system[4].value+"/"+real[1].value);
-            d3.selectAll("#tp_pct")
-                .style("width",((system[4].value/real[1].value)*100)+"%");
-            
-            d3.selectAll("#tn")
-                .text(system[5].value+"/"+real[2].value);
-            d3.selectAll("#fp")
-                .text(system[6].value+"/"+real[2].value);
-            
-            d3.selectAll("#fp_pct")
-                .style("width",((system[6].value/real[2].value)*100)+"%");
-            d3.selectAll("#tn_pct")
-                .style("width",((system[5].value/real[2].value)*100)+"%");
-            
-            d3.selectAll("#fn")
-                .text(system[7].value+"/"+real[1].value);
-            d3.selectAll("#fn_pct")
-                .style("width",((system[7].value/real[1].value)*100)+"%");
-            
-            
-            
-            d3.selectAll("#precision")
-                .text((system[8].value*100).toFixed(0)+"%");
-            d3.selectAll("#recall")
-                .text((system[9].value*100).toFixed(0)+"%");
-            d3.selectAll("#fscore")
-                .text((system[10].value*100).toFixed(0)+"%");
-            d3.selectAll("#accuracy")
-                .text((system[11].value*100).toFixed(0)+"%");
-  
-        }
-        function plotAll(element,metrics,width,axes_titles,fixedy,trace_names,plot_colors){
-             var trace1 = {
-                  y: metrics[1],
-                  x: metrics[0],
-                  line: {
-                    color: plot_colors[0],
-                    dash: "solid", 
-                    width: 4
-                  }, 
-                  name: trace_names[0], 
-                  opacity: 0.5, 
-                  type: "scatter",
-                  uid: "905426",
-                  xaxis: "x", 
-                  yaxis: "y",
+    function changeCurves(val, element) {
+        var update;
+
+        if (element == "myDiv2")
+            if (controlTraces1[val] == 1) {
+                update = {
+                    visible: false
                 };
-             var trace2 = {
-                  y: metrics[2],
-                  x: metrics[0],
-                  line: {
-                    color: plot_colors[1],
-                    dash: "solid", 
-                    width: 4
-                  }, 
-                  name: trace_names[1], 
-                  opacity: 0.5, 
-                  type: "scatter",
-                  uid: "905426",
-                  xaxis: "x", 
-                  yaxis: "y"
+                Plotly.restyle(element, update, [val]);
+                controlTraces1[val] = 0;
+            } else {
+                update = {
+                    visible: true
                 };
-             var trace3 = {
-                  y: metrics[3],
-                  x: metrics[0],
-                  line: {
-                    color: plot_colors[2],
-                    dash: "solid", 
-                    width: 4
-                  }, 
-                  name: trace_names[2], 
-                  opacity: 0.5, 
-                  type: "scatter",
-                  uid: "905426",
-                  xaxis: "x", 
-                  yaxis: "y"
-                };
-             var trace4 = {
-                  y: metrics[4],
-                  x: metrics[0],
-                  line: {
-                    color: plot_colors[3],
-                    dash: "solid", 
-                    width: 4
-                  }, 
-                  name: trace_names[3], 
-                  opacity: 0.5, 
-                  type: "scatter",
-                  uid: "905426",
-                  xaxis: "x", 
-                  yaxis: "y"
-                };
-             var trace5 = {
-              y: [0,fixedy],
-              x: [0.5,0.5],
-              line: {
-                color: "rgb(239, 28, 71)",
-                dash: "solid", 
-                width: 1
-              }, 
-              name: "Approved", 
-              opacity: 0.7, 
-              type: "scatter",
-              uid: "905426",
-              xaxis: "x", 
-              yaxis: "y"
+                Plotly.restyle(element, update, [val]);
+                controlTraces1[val] = 1;
+            } else
+        if (controlTraces2[val] == 1) {
+            update = {
+                visible: false
             };
-             var dataplot = [trace1,trace2,trace3,trace4,trace5];
-             var layout = {
-                  autosize: true,
-                  font: {family: "\"Droid Sans\", sans-serif"}, 
-                  titlefont: {
-                      color: "black", 
-                      family: "\"Verdana\", monospace", 
-                      size: 12
-                  },
-                  legend: {
-                    x: 0.413616398243, 
-                    y: 1.210569105691, 
-                    bgcolor: "rgba(255, 255, 255, 0.75)", 
-                    bordercolor: "rgba(0, 0, 0, 0)", 
-                    borderwidth: 1,
-                    orientation: 'v'
-                  }, 
-                  margin: {
-                    r: 30, 
-                    t: 20, 
-                    b: 40, 
-                    l: 50, 
-                    pad: 1
-                  }, 
-                  height: 200,
-                  width: width, 
-                  xaxis: {
-                    showgrid: true,
-                    //autorange: true,
-                    range: [0,1],
-                    title: axes_titles[0], 
-                    type: "linear",
-                    autotick: false,
-                    ticks: 'outside',
-                    tick0: 0,
-                    dtick: 0.1,
-                    ticklen: 1,
-                    tickwidth: 1,
-                  }, 
-                  yaxis: {
-                    autorange: true,
-                    //range: [0.3,1.1],
-                    title: axes_titles[1], 
-                    type: "linear"
-                  },
-                  showlegend:false
-                };
-             var config = {
-                   modeBarButtonsToRemove: ['toImage', 'sendDataToCloud','lasso2d','hoverClosestCartesian','hoverCompareCartesian','select2d'],
-                   displaylogo: false,
-                };
-            Plotly.newPlot(element, dataplot, layout,config);
-            
-            var myPlot = document.getElementById(element);
-            myPlot.on('plotly_click', function(d){
-                setValue(d.points[0].x,1,false);
-                setThreshold(d.points[0].x);
-            });
+            Plotly.restyle(element, update, [val]);
+            controlTraces2[val] = 0;
+        } else {
+            update = {
+                visible: true
+            };
+            Plotly.restyle(element, update, [val]);
+            controlTraces2[val] = 1;
         }
-        function checkButton(element){
-            if (document.getElementById(element).style.background != "gray")
-                document.getElementById(element).style.background = "gray"
-            else
-                document.getElementById(element).style.background = "white";
-        }
-        function checkButton2(element){
-            d3.selectAll(".btn_change_data").style("background","white")
-            document.getElementById(element).style.background = "gray"
-        }
-        function frequency(result) {
-            var th1 = d3.range(0,1.1,0.001)
-            var tpr =[], fpr =[] , pre=[], fscore = [], acc = [];
-            var tp1 =[], tn1=[], fp1=[],fn1=[], th2 =[];
-            var tp, tn, fp, fn;
-            var i, j;
-            for (j=0;j<th1.length;j++) {
-                tp=fp=tn=fn=0;
-                for (i = 0; i < result.length; i++) {
-                    if (th1[j]==0)
-                        th1[j]=-0.0001;
-                    if (result[i].score>th1[j]) {
-                        if (result[i].real==1)
-                            tp++;
-                        else
-                            fp++;
-                    }
-                    else {
-                        if (result[i].real==0)
-                            tn++;
-                        else
-                            fn++;
-                    }
-                }
-                tp1[j] = tp;
-                tn1[j] = tn;
-                fp1[j] = fp;
-                fn1[j] = fn;
-                
-                tpr[j] = (tp)/(tp+fn);
-                fpr[j] = (1- (tn)/(tn+fp)).toPrecision(2);
-                pre[j] = (tp)/(tp+fp);
-                fscore[j] = (2*pre[j]*tpr[j])/(pre[j]+tpr[j]);
-                
-                acc[j] = ((tp+tn)/(tp+tn+fp+fn)).toPrecision(2);
-                tpr[j] = tpr[j].toPrecision(2);
-                pre[j] = pre[j].toPrecision(2);
-                fscore[j] = fscore[j].toPrecision(2);
-            }
-            
-            var metrics = [th1,pre,tpr,fscore,acc];
-            var axes_names = ["Score/Threshold","Performance"];
-            var trace_names = ["Precision","Recall","FScore","Accuracy"];
-            var plot_colors = ["#377eb8","#984ea3","#a65628","#f781bf"];
-            
-            plotAll("myDiv2",metrics,document.getElementById("col_metrics").offsetWidth,axes_names,1.1,trace_names,plot_colors);
-            
-            var maxi = 0;
-            var y_max=0;
-            metrics = [th1,tp1,tn1,fp1,fn1];
-            axes_names = ["Score/Threshold","Applicants"];
-            trace_names = ["True+","True-","False+","False-"];
-            plot_colors = ["#1a9850","#66bd63","#f46d43","#d73027"];
-            
-            for (var i=0;i<metrics.length;i++){
-                maxi = d3.max(metrics[i]);
-                if (y_max<maxi)
-                    y_max=maxi;
-            }
-            y_max = y_max+(y_max/20);
-                    
-            plotAll("myDiv3",metrics,document.getElementById("col_metrics").offsetWidth,axes_names,y_max,trace_names,plot_colors);
-        }
-        function plotBar(values,width){
-            
+    }
 
-            var histogram = d3.layout.histogram()
-                                .bins([-0.000001, 0.10000001, 0.20000102, 0.30000203, 0.40000304, 0.50000405, 0.60000506, 0.70000607, 0.80000708, 0.90000809, 1.0000091]);
-            var hist_data = histogram(values);
-            
-            
-            var aux3 = []
-            var y_max = 0;
-            for (var i=0;i<hist_data.length;i++){
-                aux3[i] = hist_data[i].y;
-                if (y_max<aux3[i])
-                    y_max=aux3[i];
+    function setThreshold(newValue) {
+        threshold = newValue;
+        d3.selectAll("#bloc2")
+            .data(newValue)
+            .text(newValue)
+        system_cal(data);
+    }
+
+    function showValue(val, slidernum, vertical) {
+        /* setup variables for the elements of our slider */
+
+        if (val < 0)
+            val = 0;
+        if (val > 1)
+            val = 1;
+
+        var thumb = document.getElementById("sliderthumb" + slidernum);
+        var shell = document.getElementById("slidershell" + slidernum);
+        var track = document.getElementById("slidertrack" + slidernum);
+        var fill = document.getElementById("sliderfill" + slidernum);
+        var rangevalue = document.getElementById("slidervalue" + slidernum);
+        var slider = document.getElementById("slider" + slidernum);
+
+        var pc = val / (slider.max - slider.min); /* the percentage slider value */
+        var thumbsize = 40; /* must match the thumb size in your css */
+        var bigval = 300; /* widest or tallest value depending on orientation */
+        var smallval = 40; /* narrowest or shortest value depending on orientation */
+        var tracksize = bigval - thumbsize;
+        var fillsize = 35;
+        var filloffset = 10;
+        var bordersize = 2;
+        var loc = vertical ? (1 - pc) * tracksize : pc * tracksize;
+        var degrees = 360 * pc;
+        var rotation = "rotate(" + degrees + "deg)";
+
+        rangevalue.innerHTML = val;
+
+        thumb.style.webkitTransform = rotation;
+        thumb.style.MozTransform = rotation;
+        thumb.style.msTransform = rotation;
+
+        fill.style.opacity = pc + 0.2 > 1 ? 1 : pc + 0.2;
+
+        rangevalue.style.top = (vertical ? loc : 0) + "px";
+        rangevalue.style.left = (vertical ? 0 : loc) + "px";
+        thumb.style.top = (vertical ? loc : 0) + "px";
+        thumb.style.left = (vertical ? 0 : loc) + "px";
+        fill.style.top = (vertical ? loc + (thumbsize / 2) : filloffset + bordersize) + "px";
+        fill.style.left = (vertical ? filloffset + bordersize : 0) + "px";
+        fill.style.width = (vertical ? fillsize : loc + (thumbsize / 2)) + "px";
+        fill.style.height = (vertical ? bigval - filloffset - fillsize - loc : fillsize) + "px";
+        shell.style.height = (vertical ? bigval : smallval) + "px";
+        shell.style.width = (vertical ? smallval : bigval) + "px";
+        track.style.height = (vertical ? bigval - 4 : fillsize) + "px"; /* adjust for border */
+        track.style.width = (vertical ? fillsize : bigval - 4) + "px"; /* adjust for border */
+        track.style.left = (vertical ? filloffset + bordersize : 0) + "px";
+        track.style.top = (vertical ? 0 : filloffset + bordersize) + "px";
+
+        var update = {
+            x: [[Number(val), 1]]
+        }
+        Plotly.restyle('myDiv', update, [1])
+
+        update = {
+            x: [[Number(val), Number(val)]]
+        }
+        Plotly.restyle('myDiv2', update, [4])
+
+        update = {
+            x: [[Number(val), Number(val)]]
+        }
+        Plotly.restyle('myDiv3', update, [4])
+        
+        d3.selectAll(".btn_change_data2").style("background", "gray")
+
+        document.getElementById("myInput").value = val;
+    }
+
+    function setValue(val, num, vertical) {
+        document.getElementById("slider" + num).value = val;
+        showValue(val, num, vertical);
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        setValue(0.5, 1, false);
+        document.getElementById("myInput").value = 0.5;
+        newData("scores_saspe%202.csv");
+
+    });
+    window.addEventListener('resize', function () {
+        var width = document.getElementById("col_histogram").offsetWidth
+        var update = {
+            width: width
+        };
+        Plotly.relayout('myDiv', update);
+
+        width = document.getElementById("col_metrics").offsetWidth
+        update = {
+            width: width
+        };
+        Plotly.relayout('myDiv2', update);
+        Plotly.relayout('myDiv3', update);
+
+    }, true);
+
+    function real_cal(result) {
+        for (i = 0; i < result.length; i++) {
+            if (result[i].real == 1)
+                real[1].value++;
+            else
+                real[2].value++;
+        }
+        real[0].value = real[1].value + real[2].value;
+
+        d3.selectAll("#approved_real")
+            .text(real[1].value + " Applicants");
+        d3.selectAll("#reproved_real")
+            .text(real[2].value + " Applicants");
+
+        d3.selectAll("#approved_real_pct")
+            .style("width", (real[1].value / real[0].value) * 100 + "%");
+
+        d3.selectAll("#reproved_real_pct")
+            .style("width", (real[2].value / real[0].value) * 100 + "%");
+
+        d3.selectAll("#total")
+            .text(real[0].value + " Total Applicants")
+    }
+
+    function system_cal(result) {
+        var i;
+        var system = [{
+                name: "approved",
+                value: 0
+            }, //0
+            {
+                name: "reproved",
+                value: 0
+            }, //1
+            {
+                name: "correct",
+                value: 0
+            }, //2
+            {
+                name: "incorrect",
+                value: 0
+            }, //3
+            {
+                name: "tp",
+                value: 0
+            }, //4
+            {
+                name: "tn",
+                value: 0
+            }, //5
+            {
+                name: "fp",
+                value: 0
+            }, //6
+            {
+                name: "fn",
+                value: 0
+            }, //7
+            {
+                name: "precision",
+                value: 0
+            }, //8
+            {
+                name: "recall",
+                value: 0
+            }, //9
+            {
+                name: "fscore",
+                value: 0
+            }, //10
+            {
+                name: "accuracy",
+                value: 0
+            }, //11
+            {
+                name: "total",
+                value: 0
+            }]; //12
+
+        for (i = 0; i < result.length; i++) {
+            if (threshold == 0)
+                threshold = -.0001;
+            if (result[i].score > threshold) { //applicant is approved by the system
+                system[0].value++;
+                if (result[i].real == 1) { //applicant approved and system correct
+                    system[4].value++;
+                } else
+                    system[6].value++; //applicant reproved and system incorrect
+            } else { //applicant is reproved by the system
+                system[1].value++;
+                if (result[i].real == 0) //applicant reproved and system correct
+                    system[5].value++;
+                else
+                    system[7].value++; //applicant approved and system[0] incorrect
             }
-            y_max = y_max+y_max/20;
+        }
+        if (system[4].value == 0 && system[6].value == 0)
+            system[8].value = 1;
+        else
+            system[8].value = Math.round((system[4].value) / (system[4].value + system[6].value) * 100) / 100;
+
+        if (system[4].value == 0 && system[7].value == 0)
+            system[9].value = 0;
+        else
+            system[9].value = Math.round((system[4].value) / (system[4].value + system[7].value) * 100) / 100;
+
+        system[2].value = system[4].value + system[5].value;
+        system[3].value = system[6].value + system[7].value;
+
+        if ((system[8].value + system[9].value) == 0)
+            system[10].value = 0;
+        else
+            system[10].value = Math.round((2 * system[8].value * system[9].value) / (system[8].value + system[9].value) * 100) / 100;
+
+        if ((system[2].value + system[3].value) == 0)
+            system[11].value = 0;
+        else
+            system[11].value = Math.round((system[2].value) / (system[2].value + system[3].value) * 100) / 100;
+
+        system[12].value = system[0].value + system[1].value;
+
+        UpdateMeasures(system);
+
+        //first time
+        if (first == 0) {
+            frequency(result);
+            first = 1;
+        }
+    }
+
+    function UpdateMeasures(system) {
+        //Show Data
+        d3.selectAll("#approved_system")
+            .text(system[0].value + " Applicants");
+        d3.selectAll("#reproved_system")
+            .text(system[1].value + " Applicants");
+
+
+        d3.selectAll("#approved_system_pct")
+            .style("width", (system[0].value / system[12].value) * 100 + "%");
+
+        d3.selectAll("#reproved_system_pct")
+            .style("width", (system[1].value / system[12].value) * 100 + "%");
+
+
+        d3.selectAll("#correct")
+            .text(system[2].value + "/" + system[12].value);
+        d3.selectAll("#correct_pct")
+            .style("width", ((system[2].value / system[12].value) * 100) + "%");
+        d3.selectAll("#incorrect")
+            .text(system[3].value + "/" + system[12].value);
+        d3.selectAll("#incorrect_pct")
+            .style("width", ((system[3].value / system[12].value) * 100) + "%");
+
+        d3.selectAll("#tp")
+            .text(system[4].value + "/" + real[1].value);
+        d3.selectAll("#tp_pct")
+            .style("width", ((system[4].value / real[1].value) * 100) + "%");
+
+        d3.selectAll("#tn")
+            .text(system[5].value + "/" + real[2].value);
+        d3.selectAll("#fp")
+            .text(system[6].value + "/" + real[2].value);
+
+        d3.selectAll("#fp_pct")
+            .style("width", ((system[6].value / real[2].value) * 100) + "%");
+        d3.selectAll("#tn_pct")
+            .style("width", ((system[5].value / real[2].value) * 100) + "%");
+
+        d3.selectAll("#fn")
+            .text(system[7].value + "/" + real[1].value);
+        d3.selectAll("#fn_pct")
+            .style("width", ((system[7].value / real[1].value) * 100) + "%");
+
+
+
+        d3.selectAll("#precision")
+            .text((system[8].value * 100).toFixed(0) + "%");
+        d3.selectAll("#recall")
+            .text((system[9].value * 100).toFixed(0) + "%");
+        d3.selectAll("#fscore")
+            .text((system[10].value * 100).toFixed(0) + "%");
+        d3.selectAll("#accuracy")
+            .text((system[11].value * 100).toFixed(0) + "%");
+
+    }
+
+    function plotAll(element, metrics, width, axes_titles, fixedy, trace_names, plot_colors) {
+        var trace1 = {
+            y: metrics[1],
+            x: metrics[0],
+
+            line: {
+                color: plot_colors[0],
+                dash: "solid",
+                width: 4
+            },
+            name: trace_names[0],
+            opacity: 0.5,
+            type: "scatter",
+            uid: "905426",
+            xaxis: "x",
+            yaxis: "y",
+        };
+        var trace2 = {
+            y: metrics[2],
+            x: metrics[0],
+            line: {
+                color: plot_colors[1],
+                dash: "solid",
+                width: 4
+            },
+            name: trace_names[1],
+            opacity: 0.5,
+            type: "scatter",
+            uid: "905426",
+            xaxis: "x",
+            yaxis: "y"
+        };
+        var trace3 = {
+            y: metrics[3],
+            x: metrics[0],
+            line: {
+                color: plot_colors[2],
+                dash: "solid",
+                width: 4
+            },
+            name: trace_names[2],
+            opacity: 0.5,
+            type: "scatter",
+            uid: "905426",
+            xaxis: "x",
+            yaxis: "y"
+        };
+        var trace4 = {
+            y: metrics[4],
+            x: metrics[0],
+            line: {
+                color: plot_colors[3],
+                dash: "solid",
+                width: 4
+            },
+            name: trace_names[3],
+            opacity: 0.5,
+            type: "scatter",
+            uid: "905426",
+            xaxis: "x",
+            yaxis: "y"
+        };
+        var trace5 = {
+            y: [0, fixedy],
+            x: [0.5, 0.5],
+            mode: 'line',
+            line: {
+                color: "rgb(239, 28, 71)",
+                dash: "solid",
+                width: 1
+            },
+            name: "Approved",
+            opacity: 0.7,
+            type: "scatter",
+            uid: "905426",
+            xaxis: "x",
+            yaxis: "y"
+        };
+        var dataplot = [trace1, trace2, trace3, trace4, trace5];
+        var layout = {
+            autosize: true,
+            font: {
+                family: "\"Droid Sans\", sans-serif"
+            },
+            titlefont: {
+                color: "black",
+                family: "\"Verdana\", monospace",
+                size: 12
+            },
+            legend: {
+                x: 0.413616398243,
+                y: 1.210569105691,
+                bgcolor: "rgba(255, 255, 255, 0.75)",
+                bordercolor: "rgba(0, 0, 0, 0)",
+                borderwidth: 1,
+                orientation: 'v'
+            },
+            margin: {
+                r: 30,
+                t: 20,
+                b: 40,
+                l: 50,
+                pad: 1
+            },
+            height: 200,
+            width: width,
+            xaxis: {
+                showgrid: true,
+                //autorange: true,
+                range: [0, 1],
+                title: axes_titles[0],
+                type: "linear",
+                autotick: false,
+                ticks: 'outside',
+                tick0: 0,
+                dtick: 0.1,
+                ticklen: 1,
+                tickwidth: 1,
+            },
+            yaxis: {
+                autorange: true,
+                //range: [0.3,1.1],
+                title: axes_titles[1],
+                type: "linear"
+            },
+            showlegend: false
+        };
+        var config = {
+            modeBarButtonsToRemove: ['toImage', 'sendDataToCloud', 'lasso2d', 'hoverClosestCartesian', 'hoverCompareCartesian', 'select2d'],
+            displaylogo: false,
+        };
+        Plotly.newPlot(element, dataplot, layout, config);
+
+        var myPlot = document.getElementById(element);
+        myPlot.on('plotly_click', function (d) {
+            setValue(d.points[0].x, 1, false);
+            setThreshold(d.points[0].x);
+        });
+    }
+
+    function checkButton(element) {
+        if (document.getElementById(element).style.background != "gray")
+            document.getElementById(element).style.background = "gray"
+        else
+            document.getElementById(element).style.background = "white";
+    }
+
+    function checkButton2(element,option) {
+        if (option<2) {
+            d3.selectAll(".btn_change_data").style("background", "gray")
+            document.getElementById(element).style.background = "white";
+        }
+        else {
+            d3.selectAll(".btn_change_data2").style("background", "gray")
+            document.getElementById(element).style.background = "white";
+        }
+    }
+
+    function frequency(result) {
+        var th1 = d3.range(0, 1.1, 0.001)
+        var tpr = [],
+            fpr = [],
+            pre = [],
+            fscore = [],
+            acc = [];
+        var tp1 = [],
+            tn1 = [],
+            fp1 = [],
+            fn1 = [],
+            th2 = [];
+        var tp, tn, fp, fn;
+        var i, j;
+        var max_measures = [0, 0, 0, 0];
+        max_thresholds = [0, 0, 0, 0];
+
+
+        for (j = 0; j < th1.length; j++) {
+            tp = fp = tn = fn = 0;
+            for (i = 0; i < result.length; i++) {
+                if (th1[j] == 0)
+                    th1[j] = -0.0001;
+                if (result[i].score > th1[j]) {
+                    if (result[i].real == 1)
+                        tp++;
+                    else
+                        fp++;
+                } else {
+                    if (result[i].real == 0)
+                        tn++;
+                    else
+                        fn++;
+                }
+            }
+
+
+
+            tp1[j] = tp;
+            tn1[j] = tn;
+            fp1[j] = fp;
+            fn1[j] = fn;
+
+            tpr[j] = (tp) / (tp + fn);
+            fpr[j] = (1 - (tn) / (tn + fp)).toPrecision(2);
+            pre[j] = (tp) / (tp + fp);
+            fscore[j] = (2 * pre[j] * tpr[j]) / (pre[j] + tpr[j]);
+
+            acc[j] = ((tp + tn) / (tp + tn + fp + fn)).toPrecision(2);
+            tpr[j] = tpr[j].toPrecision(2);
+            pre[j] = pre[j].toPrecision(2);
+            fscore[j] = fscore[j].toPrecision(2);
+
             
-            /*var trace1 = {
+            
+            if (max_measures[0] < tpr[j] && max_measures[0]!=1 && tpr[j]!="NaN") {
+                max_measures[0] = tpr[j];
+                max_thresholds[0] = th1[j];
+            }
+            if (max_measures[1] < pre[j] && max_measures[1]!=1 && pre[j]!="NaN") {
+                max_measures[1] = pre[j];
+                max_thresholds[1] = th1[j];
+            }
+            if (max_measures[2] < fscore[j] && max_measures[2]!=1 && fscore[j]!="NaN") {
+                max_measures[2] = fscore[j];
+                max_thresholds[2] = th1[j];
+            }
+            if (max_measures[3] < acc[j] && max_measures[3]!=1 && acc[j]!="NaN") {
+                max_measures[3] = acc[j];
+                max_thresholds[3] = th1[j];
+            }
+
+
+
+        }
+        
+        
+        indexOfMaxValue = pre.indexOf(Math.max.apply(window,pre));
+        test=fscore;
+
+        var metrics = [th1, pre, tpr, fscore, acc];
+        var axes_names = ["Score/Threshold", "Performance"];
+        var trace_names = ["Precision", "Recall", "FScore", "Accuracy"];
+        var plot_colors = ["#377eb8", "#984ea3", "#a65628", "#f781bf"];
+
+        plotAll("myDiv2", metrics, document.getElementById("col_metrics").offsetWidth, axes_names, 1.1, trace_names, plot_colors);
+
+        var maxi = 0;
+        var y_max = 0;
+        metrics = [th1, tp1, tn1, fp1, fn1];
+        axes_names = ["Score/Threshold", "Applicants"];
+        trace_names = ["True+", "True-", "False+", "False-"];
+        plot_colors = ["#1a9850", "#66bd63", "#f46d43", "#d73027"];
+
+        for (var i = 0; i < metrics.length; i++) {
+            maxi = d3.max(metrics[i]);
+            if (y_max < maxi)
+                y_max = maxi;
+        }
+        y_max = y_max + (y_max / 20);
+
+        plotAll("myDiv3", metrics, document.getElementById("col_metrics").offsetWidth, axes_names, y_max, trace_names, plot_colors);
+    }
+
+    function plotBar(values, width) {
+        var histogram = d3.layout.histogram()
+            .bins([-0.000001, 0.10000001, 0.20000102, 0.30000203, 0.40000304, 0.50000405, 0.60000506, 0.70000607, 0.80000708, 0.90000809, 1.0000091]);
+        var hist_data = histogram(values);
+        var aux3 = []
+        var y_max = 0;
+        for (var i = 0; i < hist_data.length; i++) {
+            aux3[i] = hist_data[i].y;
+            if (y_max < aux3[i])
+                y_max = aux3[i];
+        }
+        y_max = y_max + y_max / 20;
+        var aux_str = "";
+        var aux_json = [];
+
+        for (var i = 0; i < aux3.length; i++) {
+            aux_str = ' [{"x":' + (i / 10 + 0.05) + ' ,"y":' + (aux3[i] + 0.025 * y_max) + ', "xref":"x","yref":"y","text":"' + aux3[i] + '","showarrow":false}]';
+            aux_json = aux_json.concat(JSON.parse(aux_str));
+        };
+        /*ann2 = [
+                {
+                    x: 0.05,
+                    y: 245,
+                    xref: 'x',
+                    yref: 'y',
+                    text: '239',
+                    showarrow: false,
+                },
+                {
+                    x: 0.15,
+                    y: 33,
+                    xref: 'x',
+                    yref: 'y',
+                    text: '27',
+                    showarrow: false,
+                },
+                {
+                    x: 0.25,
+                    y: 17,
+                    xref: 'x',
+                    yref: 'y',
+                    text: '11',
+                    showarrow: false,
+                },
+                {
+                    x: 0.35,
+                    y: 13,
+                    xref: 'x',
+                    yref: 'y',
+                    text: '7',
+                    showarrow: false,
+                },
+                {
+                    x: 0.45,
+                    y: 17,
+                    xref: 'x',
+                    yref: 'y',
+                    text: '11',
+                    showarrow: false,
+                },
+                {
+                    x: 0.55,
+                    y: 16,
+                    xref: 'x',
+                    yref: 'y',
+                    text: '10',
+                    showarrow: false,
+                },
+                {
+                    x: 0.65,
+                    y: 14,
+                    xref: 'x',
+                    yref: 'y',
+                    text: '8',
+                    showarrow: false,
+                },
+                {
+                    x: 0.75,
+                    y: 15,
+                    xref: 'x',
+                    yref: 'y',
+                    text: '9',
+                    showarrow: false,
+                },
+                {
+                    x: 0.85,
+                    y: 15,
+                    xref: 'x',
+                    yref: 'y',
+                    text: '9',
+                    showarrow: false,
+                },
+                {
+                    x: 0.95,
+                    y: 212,
+                    xref: 'x',
+                    yref: 'y',
+                    text: '206',
+                    showarrow: false,
+                },
+                  ]*/
+        /*var trace1 = {
                       y: aux3,
                       x: d3.range(0,1,0.1),
                       name: "# Applicants", 
                       type: "bar", 
                       uid: "340c31", 
                     };*/
-            
-            var trace1 = {
-                      x: values,
-                      //autobinx: true,
-                      name: "# Applicants", 
-                      //nbinsx: 11, 
-                      type: "histogram", 
-                      uid: "340c31", 
-                      xbins: {
-                        end: 1.1, 
-                        size: 0.10000101, 
-                        start: -0.000001
-                      }
-                    };
 
-            var trace2 = {
-                  y: [y_max,y_max],
-                  x: [0.5,1],
-                  line: {
-                    color: "rgb(39, 228, 71)",
-                    dash: "solid", 
-                    width: 4
-                  }, 
-                  name: "Approved", 
-                  opacity: 0.1, 
-                  type: "scatter",
-                  fill: 'tozeroy',
-                  uid: "905426",
-                  xaxis: "x", 
-                  yaxis: "y"
-                };
-            var dataplot = [trace1,trace2];
-            var layout = {
-                  //annotations: annotationContent
-                  autosize: true,
-                  bargap: 0, 
-                  bargroupgap: 0.2, 
-                  barmode: "overlay", 
-                  font: {family: "\"Droid Sans\", sans-serif"}, 
-                  titlefont: {
-                      color: "black", 
-                      family: "\"Verdana\", monospace", 
-                      size: 12
-                  },
-                  legend: {
-                    x: 0.013616398243, 
-                    y: 1.210569105691, 
-                    bgcolor: "rgba(255, 255, 255, 0.75)", 
-                    bordercolor: "rgba(0, 0, 0, 0)", 
-                    borderwidth: 1
-                  },
-                  /*annotations: [
-                    {x: 0.05,y: 245,xref: 'x',yref: 'y',text: '239',showarrow: false,},
-                    {x: 0.15,y: 33,xref: 'x',yref: 'y',text: '27',showarrow: false,},
-                    {x: 0.25,y: 17,xref: 'x',yref: 'y',text: '11',showarrow: false,},
-                    {x: 0.35,y: 13,xref: 'x',yref: 'y',text: '7',showarrow: false,},
-                    {x: 0.45,y: 17,xref: 'x',yref: 'y',text: '11',showarrow: false,},
-                    {x: 0.55,y: 16,xref: 'x',yref: 'y',text: '10',showarrow: false,},
-                    {x: 0.65,y: 14,xref: 'x',yref: 'y',text: '8',showarrow: false,},
-                    {x: 0.75,y: 15,xref: 'x',yref: 'y',text: '9',showarrow: false,},
-                    {x: 0.85,y: 15,xref: 'x',yref: 'y',text: '9',showarrow: false,},
-                    {x: 0.95,y: 212,xref: 'x',yref: 'y',text: '206',showarrow: false,},
-                  ],*/
-                  margin: {
-                    r: 30, 
-                    t: 20, 
-                    b: 40, 
-                    l: 50, 
-                    pad: 1
-                  }, 
-                  height: 400,  
-                  //title: "Applicants", 
-                  width: width, 
-                  xaxis: {
-                    showgrid: true,
-                    autorange: true,
-                    //range: [0,1],
-                    title: "Score/Threshold", 
-                    type: "linear",
-                    autotick: false,
-                    ticks: 'outside',
-                    tick0: 0,
-                    dtick: 0.1,
-                    //ticklen: 2,
-                    //tickwidth: 2,
-                  }, 
-                  yaxis: {
-                    autorange: true,
-                    //range: [0,100],
-                    title: "Number of Applicants", 
-                    type: "linear"
-                  },
-                  showlegend:false
-                };        
-            var config = {
-                   modeBarButtonsToRemove: ['toImage', 'sendDataToCloud','lasso2d','hoverClosestCartesian','hoverCompareCartesian','select2d'],
-                   displaylogo: false,
-                };
-            Plotly.newPlot('myDiv', dataplot, layout,config);
-            var myPlot = document.getElementById("myDiv");
-            myPlot.on('plotly_click', function(d){
-                setValue(d.points[0].x,1,false);
-                setThreshold(d.points[0].x);
+        var trace1 = {
+            x: values,
+            //autobinx: true,
+            name: "# Applicants",
+            //nbinsx: 11, 
+            type: "histogram",
+            uid: "340c31",
+            xbins: {
+                end: 1.1,
+                size: 0.10000101,
+                start: -0.000001
+            }
+        };
+        var trace2 = {
+            y: [y_max, y_max],
+            x: [0.5, 1],
+
+            line: {
+                color: "rgb(39, 228, 71)",
+                dash: "solid",
+                width: 4
+            },
+            mode: 'line',
+            name: "Approved",
+            opacity: 0.1,
+            type: "scatter",
+            fill: 'tozeroy',
+            uid: "905426",
+            xaxis: "x",
+            yaxis: "y"
+        };
+        var dataplot = [trace1, trace2];
+        var layout = {
+            //annotations: annotationContent
+            autosize: true,
+            bargap: 0,
+            bargroupgap: 0.2,
+            barmode: "overlay",
+            font: {
+                family: "\"Droid Sans\", sans-serif"
+            },
+            titlefont: {
+                color: "black",
+                family: "\"Verdana\", monospace",
+                size: 12
+            },
+            legend: {
+                x: 0.013616398243,
+                y: 1.210569105691,
+                bgcolor: "rgba(255, 255, 255, 0.75)",
+                bordercolor: "rgba(0, 0, 0, 0)",
+                borderwidth: 1
+            },
+            annotations: aux_json,
+            margin: {
+                r: 30,
+                t: 20,
+                b: 40,
+                l: 50,
+                pad: 1
+            },
+            height: 400,
+            //title: "Applicants", 
+            width: width,
+            xaxis: {
+                showgrid: true,
+                autorange: true,
+                //range: [0,1],
+                title: "Score/Threshold",
+                type: "linear",
+                autotick: false,
+                ticks: 'outside',
+                tick0: 0,
+                dtick: 0.1,
+                //ticklen: 2,
+                //tickwidth: 2,
+            },
+            yaxis: {
+                autorange: true,
+                //range: [0,100],
+                title: "Number of Applicants",
+                type: "linear"
+            },
+            showlegend: false
+        };
+        var config = {
+            modeBarButtonsToRemove: ['toImage', 'sendDataToCloud', 'lasso2d', 'hoverClosestCartesian', 'hoverCompareCartesian', 'select2d'],
+            displaylogo: false,
+        };
+        Plotly.newPlot('myDiv', dataplot, layout, config);
+        var myPlot = document.getElementById("myDiv");
+        myPlot.on('plotly_click', function (d) {
+            setValue(d.points[0].x, 1, false);
+            setThreshold(d.points[0].x);
+        });
+    }
+    d3.csv('https://s3.amazonaws.com/files-deepchoice/DeepChoice/features.csv', function (error, result) {
+        d3.select("#featureList2").selectAll("li")
+            .data(result.slice(0, 13))
+            .enter()
+            .append("div")
+            //.attr("class", "listItem")
+            .text(function (d) {
+                return d.name + " " + d.value
+            })
+            .on("mouseenter", function (d, i) {
+                highlight(d.name, d3.select("#featureList2"))
+            })
+            .on("mouseleave", function (d, i) {
+                unhighlight(d3.select("#featureList2"))
             });
-         }
-    
-        d3.csv('https://s3.amazonaws.com/files-deepchoice/DeepChoice/features.csv', function(error, result){
-            d3.select("#featureList2").selectAll("li")
-                .data(result.slice(0,13))
-                .enter()
-                .append("div")
-                //.attr("class", "listItem")
-                .text(function(d) {return d.name + " " + d.value})
-                .on("mouseenter", function(d,i) {
-                    highlight(d.name,d3.select("#featureList2"))
-                })
-                .on("mouseleave", function(d,i) {
-                    unhighlight(d3.select("#featureList2"))
-                });
-        });
-        d3.csv('https://s3.amazonaws.com/files-deepchoice/DeepChoice/features2.csv', function(error, result){
-            d3.select("#featureList").selectAll("li")
-                .data(result.slice(0,13))
-                .enter()
-                .append("div")
-                //.attr("class", "listItem")
-                .text(function(d) {return d.name})
-                .on("mouseenter", function(d,i) {
-                    highlight(d.name,d3.select("#featureList"))
-                })
-                .on("mouseleave", function(d,i) {
-                    unhighlight(d3.select("#featureList"))
-                });
-            
-            d3.selectAll("#match_features")
-                .text("9/13");
-            d3.selectAll("#match_features_pct")
-                .style("width",((9/13)*100)+"%");
-        });
-    
-        function highlight(name,list) {
-            list.selectAll("div")
-                .style("background-color", function(d,i) { 
-                    return d.name == name ? "#009ACD" : undefined
-                })
-                .style("color", function(d,i) { 
-                    return d.name == name ? "white" : undefined
-                })
-        }    
-        function unhighlight(list){
-            list.selectAll("div")
-                .style("background-color", undefined)
-                .style("color", undefined)
-            
-        } 
-        
-    
-    </script>
+    });
+    d3.csv('https://s3.amazonaws.com/files-deepchoice/DeepChoice/features2.csv', function (error, result) {
+        d3.select("#featureList").selectAll("li")
+            .data(result.slice(0, 13))
+            .enter()
+            .append("div")
+            //.attr("class", "listItem")
+            .text(function (d) {
+                return d.name
+            })
+            .on("mouseenter", function (d, i) {
+                highlight(d.name, d3.select("#featureList"))
+            })
+            .on("mouseleave", function (d, i) {
+                unhighlight(d3.select("#featureList"))
+            });
+
+        d3.selectAll("#match_features")
+            .text("9/13");
+        d3.selectAll("#match_features_pct")
+            .style("width", ((9 / 13) * 100) + "%");
+    });
+
+    function highlight(name, list) {
+        list.selectAll("div")
+            .style("background-color", function (d, i) {
+                return d.name == name ? "#009ACD" : undefined
+            })
+            .style("color", function (d, i) {
+                return d.name == name ? "white" : undefined
+            })
+    }
+
+    function unhighlight(list) {
+        list.selectAll("div")
+            .style("background-color", undefined)
+            .style("color", undefined)
+
+    }
+</script>
+
 </html>
