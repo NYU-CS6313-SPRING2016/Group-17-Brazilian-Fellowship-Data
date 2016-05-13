@@ -42,7 +42,7 @@
         .btn_change {
             font-family: 'Segoe UI', 'Open Sans', Arial, sans-serif;
             background: white;
-            color: white;
+            color: black;
             height: 15px;
             ¡ width: 40px;
             font-size: 50%;
@@ -54,8 +54,8 @@
         
         .btn_change_data, .btn_change_data2, .btn_change_data3 {
             font-family: 'Segoe UI', 'Open Sans', Arial, sans-serif;
-            background: black;
-            color: white;
+            background: gray;
+            color: black;
             height: 15px;
             width: 40px;
             font-size: 50%;
@@ -67,8 +67,7 @@
         
         .button_conservative,
         .button_default,
-        .button_aggressive,
-        .button_purple {
+        .button_aggressive {
             font-family: 'Segoe UI', 'Open Sans', 'Arial', sans-serif;
             display: block;
             color: rgb(255, 255, 255);
@@ -76,32 +75,24 @@
             text-align: center;
             padding: 10px;
             margin: 10px 0px 0px 10px;
-            font-size: 70%;
+            font-size: 90%;
             text-transform: uppercase;
             color: #FFF;
             border: 0px none;
             outline: 0px none;
-            
+            float: left;
         }
         
         .button_conservative {
             background: #00ace6;
-            float: left;
-        }
-        
-        .button_purple {
-            background: #993399;
-            width: 80%
         }
         
         .button_default {
             background: #005ce6;
-            float: left;
         }
         
         .button_aggressive {
             background: #333399;
-            float: left;
         }
         
         .button_aggressive:hover,
@@ -141,74 +132,21 @@
             vertical-align: middle;
             float: none;
         }
-        .progress-bar-true-positive, #tpb {
+        .progress-bar-true-positive {
             background-color: #1a9850;
         }
         
-        .progress-bar-true-negative, #tnb {
+        .progress-bar-true-negative {
             background-color: #66bd63;
         }
         
-        .progress-bar-false-positive, #fpb {
+        .progress-bar-false-positive {
             background-color: #f46d43;
         }
         
-        .progress-bar-false-negative, #fnb {
+        .progress-bar-false-negative {
             background-color: #d73027;
         }
-        
-        #tp {
-            color: #1a9850;
-        }
-        
-        #tn {
-            color: #66bd63;
-        }
-        
-        #fp {
-            color: #f46d43;
-        }
-        
-        #fn {
-            color: #d73027;
-        }
-        
-        
-        #preb {
-            background-color: #377eb8;
-        }
-        
-        #recb {
-            background-color: #984ea3;
-        }
-        
-        #fscb {
-            background-color: #a65628;
-        }
-        
-        #accb {
-            background-color: #f781bf;
-        }
-        
-        
-        
-        
-        
-        .info-box-text, .info-box-number, .progress-description {
-            font-size: 75%;
-        }
-        .info-box {
-            width: 100%;
-        }
-        .progress-number , .text-progress{
-            font-size: 90%;
-        }
-        .text-center {
-            padding: 0px 0px 0px 0px; 
-        }
-        
-        
-        
         
         
     </style>
@@ -222,39 +160,61 @@
             <div class="row">
 
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="box box-solid box-warning">
-                        <div class="box-header">
-                            <span><img src="https://s3.amazonaws.com/files-deepchoice/DeepChoice/User-Group.png" width="20" height="20"><h3 style="padding-left:5%;" class="box-title">Approved Real</h3></span>
+                    <div class="info-box bg-yellow">
+                        <span class="info-box-icon"><i class="fa fa-users"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Approved Real</span>
+                            <span class="info-box-number" id="approved_real"></span>
+                            <div class="progress">
+                                <div class="progress-bar" id="approved_real_pct"></div>
+                            </div>
+                            <span class="progress-description" id="total"></span>
                         </div>
-                        <div class="box-body" id="approved_real"></div>
-                      </div>
+                    </div>
                 </div>
 
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="box box-solid box-warning">
-                        <div class="box-header">
-                          <span><img src="https://s3.amazonaws.com/files-deepchoice/DeepChoice/User-Group.png" width="20" height="20"><h3 style="padding-left:5%;" class="box-title">Reproved Real</h3></span>
+                    <div class="info-box bg-yellow">
+                        <span class="info-box-icon"><i class="fa fa-users"></i></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Rejected Real</span>
+                            <span class="info-box-number" id="reproved_real"></span>
+                            <div class="progress">
+                                <div class="progress-bar" id="reproved_real_pct"></div>
+                            </div>
+                            <span class="progress-description" id="total"></span>
                         </div>
-                        <div class="box-body" id="reproved_real"></div>
-                      </div>
+                    </div>
+                </div>
+
+                <div class="clearfix visible-sm-block"></div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="info-box bg-aqua">
+                        <span class="info-box-icon"><img src="https://s3.amazonaws.com/files-deepchoice/DeepChoice/dpicon.png" width="60" height="60"></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Approved System</span>
+                            <span class="info-box-number" id="approved_system"></span>
+                            <div class="progress">
+                                <div class="progress-bar" id="approved_system_pct"></div>
+                            </div>
+                            <span class="progress-description" id="total"></span>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="box box-solid box-info">
-                        <div class="box-header">
-                          <span><img src="https://s3.amazonaws.com/files-deepchoice/DeepChoice/dpicon.png" width="20" height="20"><h3 style="padding-left:5%;" class="box-title">Approved System</h3></span>
+                    <div class="info-box bg-aqua">
+                        <span class="info-box-icon"><img src="https://s3.amazonaws.com/files-deepchoice/DeepChoice/dpicon.png" width="60" height="60"></span>
+                        <div class="info-box-content">
+                            <span class="info-box-text">Rejected System</span>
+                            <span class="info-box-number" id="reproved_system"></span>
+                            <div class="progress">
+                                <div class="progress-bar" id="reproved_system_pct"></div>
+                            </div>
+                            <span class="progress-description" id="total"></span>
                         </div>
-                        <div class="box-body" id="approved_system"></div>
-                      </div>
-                </div>
-                
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="box box-solid box-info">
-                        <div class="box-header">
-                          <span><img src="https://s3.amazonaws.com/files-deepchoice/DeepChoice/dpicon.png" width="20" height="20"><h3 style="padding-left:5%;" class="box-title">Reproved System</h3></span>
-                        </div>
-                        <div class="box-body" id="reproved_system"></div>
-                      </div>
+                    </div>
                 </div>
 
 
@@ -270,10 +230,13 @@
                                 <button id ="btn_data2" type="button" class="btn_change_data" onclick="changeData('2'); checkButton2('btn_data2',1);">Data2</button>
                                 <button id ="btn_data3" type="button" class="btn_change_data" onclick="changeData('3'); checkButton2('btn_data3',1);">Data3</button>
                             </span>
-                      
-                            
-                            
-                                
+                            <span style="float:right;">
+                                <button id ="btn_data4" type="button" class="btn_change_data2" onclick="high_measures(0); checkButton2('btn_data4',2);">Recall</button>
+                                <button id ="btn_data5" type="button" class="btn_change_data2" onclick="high_measures(1); checkButton2('btn_data5',2);">Precision</button>
+                                <button id ="btn_data6" type="button" class="btn_change_data2" onclick="high_measures(2); checkButton2('btn_data6',2);">Fscore</button>
+                                <button id ="btn_data7" type="button" class="btn_change_data2" onclick="high_measures(3); checkButton2('btn_data7',2);">Accuracy</button>
+                            </span>
+                            <span style="float:right;" class="box-title">Maximum Values for:_</span>
                         </div>
 
                         <div class="box-body">
@@ -349,72 +312,85 @@
                                     <p class="text-center">
                                         <strong>General Measures</strong>
                                     </p>
-                                    
-                                  
-                                    <div class="row">
-                                        <div class="col-sm-6 col-xs-6">
-                                            <div class="description-block border-right">
-                                                <h5  class="description-header">Correct</h5>
-                                                <span class="description-percentage text-green" id="correct"></span>
+                                    <div class="progress-group">
+                                        <span class="progress-text">Correct</span>
+                                        <span class="progress-number">
+                        <b id ="correct"></b></span>
+                                        <div class="progress sm">
+                                            <div class="progress-bar progress-bar-green" id="correct_pct">
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <div class="col-sm-6 col-xs-6">
-                                            <div class="description-block border-right">
-                                                <h5 title="The fraction of approved applicants that are retrieved - TP/(TP+FN)" class="description-header">Incorrect</h5>
-                                                <span class="description-percentage text-red" id="incorrect"></span>
+                                    <div class="progress-group">
+                                        <span class="progress-text">Incorrect</span>
+                                        <span class="progress-number">
+                        <b id ="incorrect"></b></span>
+                                        <div class="progress sm">
+                                            <div class="progress-bar progress-bar-red" id="incorrect_pct">
                                             </div>
-
                                         </div>
                                     </div>
-                                    
-                                   <div class="progress">
-                                        <div class="progress-bar progress-bar-true-positive" id="tp_pct"></div>
-                                        <div class="progress-bar progress-bar-true-negative" id="tn_pct"></div>
-                                        <div class="progress-bar progress-bar-false-positive" id="fp_pct"></div>  
-                                        <div class="progress-bar progress-bar-false-negative" id="fn_pct"></div>  
-                                    </div>
-                            
+
                                     <p class="text-center">
                                         <strong>Rates</strong>
                                     </p>
-                                    
-                                    <div>
-                                    <span data-toggle="tooltip" data-placement="left" id="tph" class="text-progress" title="Applicants approved by both the humans and the system - TP">Correctly Approved (True+):</span>
-                                        <span class="progress-number"><b id ="tp"></b></span>
+
+                                    <div class="progress-group">
+                                        <span id="tph" style="font-size:100%;" title="Applicants approved by both the humans and the system - TP">Correctly Approved (True+)</span>
+                                        <span class="progress-number">
+                        <b id ="tp"></b></span>
+                                        <div class="progress sm">
+                                            <div class="progress-bar progress-bar-true-positive" id="tp_pct">
+                                            </div>
+                                        </div>
                                     </div>
 
-                                     <div>
-                                     <span data-toggle="tooltip" data-placement="left" class="text-progress" title="Applicants rejected by both the humans and the system - TN">Correctly Rejected (True-):</span>
-                                        <span class="progress-number"> <b id ="tn"></b></span>
-                                     </div>
-                                    
-                                    <div>
-                                    <span data-toggle="tooltip" data-placement="left" class="text-progress" title="Applicants approved by humans but rejected by the system - FN">Incorrectly Rejected (False-):</span>
-                                        <span class="progress-number">  <b id ="fn"></b></span>
+                                    <div class="progress-group" height="3">
+                                        <span style="font-size:100%;" title="Applicants approved by humans but rejected by the system - FN">Incorrectly Rejected (False-)</span>
+                                        <span class="progress-number">
+                        <b id ="fn"></b></span>
+                                        <div class="progress sm">
+                                            <div class="progress-bar progress-bar-false-negative" id="fn_pct">
+                                            </div>
+                                        </div>
                                     </div>
-                       
-                                     <div>
-                                    <span class="text-progress" data-toggle="tooltip" data-placement="left" title="Applicants rejected by humans but approved by the system - FP">Incorrectly Approved (False+):</span>
-                                        <span class="progress-number"><b id ="fp"></b></span>
-                                     </div>
-                                    
-                                    <p class="text-center" style="padding-top:10px">
+
+                                    <div class="progress-group">
+                                        <span style="font-size:100%;" title="Applicants rejected by both the humans and the system - TN">Correctly Rejected (True-)</span>
+                                        <span class="progress-number">
+                        <b id ="tn"></b></span>
+                                        <div class="progress sm">
+                                            <div class="progress-bar progress-bar-true-negative" id="tn_pct">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="progress-group">
+                                        <span style="font-size:100%;" title="Applicants rejected by humans but approved by the system - FP">Incorrectly Approved (False+)</span>
+                                        <span class="progress-number">
+                        <b id ="fp"></b></span>
+                                        <div class="progress sm">
+                                            <div class="progress-bar progress-bar-false-positive" id="fp_pct">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p class="text-center">
                                         <strong>Performance Measures</strong>
                                     </p>
-                        
 
                                     <div class="row">
                                         <div class="col-sm-6 col-xs-6">
                                             <div class="description-block border-right">
-                                                <h5 data-toggle="tooltip" data-placement="top" title="The fraction of retrieved applicants that are approved - TP/(TP+FP)" class="description-header">PRECISION</h5>
+                                                <h5 title="The fraction of retrieved applicants that are approved - TP/(TP+FP)" class="description-header">PRECISION</h5>
                                                 <span class="description-percentage text-green" id="precision"></span>
                                             </div>
                                         </div>
 
                                         <div class="col-sm-6 col-xs-6">
                                             <div class="description-block border-right">
-                                                <h5 data-toggle="tooltip" data-placement="top" title="The fraction of approved applicants that are retrieved - TP/(TP+FN)" class="description-header">RECALL</h5>
+                                                <h5 title="The fraction of approved applicants that are retrieved - TP/(TP+FN)" class="description-header">RECALL</h5>
                                                 <span class="description-percentage text-green" id="recall"></span>
                                             </div>
 
@@ -423,7 +399,7 @@
                                     <div class="row">
                                         <div class="col-sm-6 col-xs-6">
                                             <div class="description-block border-right">
-                                                <h5 data-toggle="tooltip" data-placement="top" title="The harmonic mean between precision and recall - 2PR/(P+R)" class="description-header">FSCORE</h5>
+                                                <h5 title="The harmonic mean between precision and recall - 2PR/(P+R)" class="description-header">FSCORE</h5>
                                                 <span class="description-percentage text-green" id="fscore"></span>
                                             </div>
 
@@ -431,26 +407,11 @@
 
                                         <div class="col-sm-6 col-xs-6">
                                             <div class="description-block">
-                                                <h5 data-toggle="tooltip" data-placement="top" title="The fraction of applicants correctly classified - (TP+TN)/Total" class="description-header">ACCURACY</h5>
+                                                <h5 title="The fraction of applicants correctly classified - (TP+TN)/Total" class="description-header">ACCURACY</h5>
                                                 <span class="description-percentage text-green" id="accuracy"></span>
                                             </div>
                                         </div>
 
-                                    </div>
-                                    
-                                    <p class="text-center">
-                                        <strong>Maximum Values</strong>
-                                    </p>
-                                    
-                                    <div class="row" align="center">
-                                        <div class="col-sm-6 col-xs-6">
-                                        <button id ="btn_data4" type="button" class="button_purple" onclick="high_measures(0); checkButton2('btn_data4',2);">Recall</button>
-                                        <button id ="btn_data5" type="button" class="button_purple" onclick="high_measures(1); checkButton2('btn_data5',2);">Precision</button>
-                                        </div>
-                                        <div class="col-sm-6 col-xs-6">
-                                        <button id ="btn_data6" type="button" class="button_purple" onclick="high_measures(2); checkButton2('btn_data6',2);">Fscore</button>
-                                        <button id ="btn_data7" type="button" class="button_purple" onclick="high_measures(3); checkButton2('btn_data7',2);">Accuracy</button>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -503,7 +464,7 @@
 
         </section>
 
-            
+
     </div>
 
     <!-- REQUIRED JS SCRIPTS -->
@@ -714,7 +675,7 @@
         }
         Plotly.restyle('myDiv3', update, [4])
         
-        d3.selectAll(".button_purple").style("background", "#993399")
+        d3.selectAll(".btn_change_data2").style("background", "gray")
 
         document.getElementById("myInput").value = val;
     }
@@ -900,26 +861,24 @@
             .style("width", ((system[3].value / system[12].value) * 100) + "%");
 
         d3.selectAll("#tp")
-            .text(system[4].value);
+            .text(system[4].value + "/" + real[1].value);
         d3.selectAll("#tp_pct")
-            .style("width", ((system[4].value / system[12].value) * 100) + "%");
+            .style("width", ((system[4].value / real[1].value) * 100) + "%");
 
         d3.selectAll("#tn")
-            .text(system[5].value);
-        d3.selectAll("#tn_pct")
-            .style("width", ((system[5].value / system[12].value) * 100) + "%");
-        
-        
+            .text(system[5].value + "/" + real[2].value);
         d3.selectAll("#fp")
-            .text(system[6].value);
+            .text(system[6].value + "/" + real[2].value);
+
         d3.selectAll("#fp_pct")
-            .style("width", ((system[6].value / system[12].value) * 100) + "%");
-        
+            .style("width", ((system[6].value / real[2].value) * 100) + "%");
+        d3.selectAll("#tn_pct")
+            .style("width", ((system[5].value / real[2].value) * 100) + "%");
 
         d3.selectAll("#fn")
-            .text(system[7].value);
+            .text(system[7].value + "/" + real[1].value);
         d3.selectAll("#fn_pct")
-            .style("width", ((system[7].value / system[12].value) * 100) + "%");
+            .style("width", ((system[7].value / real[1].value) * 100) + "%");
 
 
 
@@ -1075,47 +1034,20 @@
     }
 
     function checkButton(element) {
-        
-        if (document.getElementById(element).style.background != "black")
-            document.getElementById(element).style.background = "black";
-        else {
-            if (element == "tpb" )
-                document.getElementById("tpb").style.background = "#1a9850";
-
-            if (element == "tnb" )
-                document.getElementById("tnb").style.background = "#66bd63";
-
-            if (element == "fpb" )
-                document.getElementById("fpb").style.background = "#f46d43";
-
-            if (element == "fnb" )
-                document.getElementById("fnb").style.background = "#d73027";
-            
-            
-            if (element == "preb" )
-                document.getElementById("preb").style.background = "#377eb8";
-
-            if (element == "recb" )
-                document.getElementById("recb").style.background = "#984ea3";
-
-            if (element == "fscb" )
-                document.getElementById("fscb").style.background = "#a65628";
-
-            if (element == "accb" )
-                document.getElementById("accb").style.background = "#f781bf";
-        }   
+        if (document.getElementById(element).style.background != "gray")
+            document.getElementById(element).style.background = "gray"
+        else
+            document.getElementById(element).style.background = "white";
     }
 
     function checkButton2(element,option) {
         if (option<2) {
-            d3.selectAll(".btn_change_data").style("background", "black");
-            d3.selectAll(".btn_change_data").style("color", "white")
+            d3.selectAll(".btn_change_data").style("background", "gray")
             document.getElementById(element).style.background = "white";
-            document.getElementById(element).style.color = "black";
         }
         else {
-            d3.selectAll(".button_purple").style("background", "#993399")
-            document.getElementById(element).style.background = "black";
+            d3.selectAll(".btn_change_data2").style("background", "gray")
+            document.getElementById(element).style.background = "white";
         }
     }
 
