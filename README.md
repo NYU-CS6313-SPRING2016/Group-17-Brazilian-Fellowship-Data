@@ -2,7 +2,7 @@ Visual DeepChoice - Understanding the predictions from DeepChoice system
 
 This is a visualization tool used to understand the predictions from a machine learning system called DeepChoice.
 
-Auothors
+Authors
 Andre Mendes da Silva (amd871@nyu.edu)
 
 Related links:
