@@ -1,7 +1,7 @@
 #Visual DeepChoice - Understanding the predictions from DeepChoice system
 ![alt text](https://raw.githubusercontent.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/master/VDC-screenshot.png "Visual DeepChoice")
 
-**Authors**: Andre Mendes ([github-user-name](https://github.com/MendesSP))
+**Authors**: Andre Mendes ([MendesSP](https://github.com/MendesSP))
 
 ##Description
 DeepChoice is a machine learning system that learns to select the best applicants in a selection process. It uses the data from previous processes to create a model that is able to assign a score from 0 to 1 to new applicants. This score represent how likely it is for this new applicant to be selected in the future process. 
