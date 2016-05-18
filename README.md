@@ -14,7 +14,7 @@ The threshold is very important in the system because it represents the minimum 
 
 **Demo**: http://NYU-CS6313-SPRING2016.github.io/Group-17-Brazilian-Fellowship-Data
 
-**Document**: http://link-to-finalreport.com ...
+**Document**: https://github.com/NYU-CS6313-SPRING2016/Group-17-Brazilian-Fellowship-Data/blob/master/AndreMendes-Final-VisualDeepChoice.pdf
 
 ###Runing
 1. Open the demo
