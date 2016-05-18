@@ -338,9 +338,18 @@
                                          <div class="col-md-7">
                                              <div class="row" align="center">
                                                 <div class="head_btn" style="margin-bottom:6px;margin-top:10px">Pre Defined</div>
-                                                <button type="button" class="button_conservative" onclick="setThreshold('0.2'); showValue(0.2,1,false);">Conservative</button>
-                                                <button type="button" class="button_default" onclick="setThreshold('0.5'); showValue(0.5,1,false);">Balanced</button>
-                                                <button type="button" class="button_aggressive" onclick="setThreshold('0.9'); showValue(0.9,1,false);">Aggressive</button>
+                                                <button type="button" 
+                                                        class="button_conservative"
+                                                        data-toggle="tooltip" data-placement="top" title="Higher Recall, Lower Precision, tries to avoid missing good applicants (lower False-)"
+                                                        onclick="setThreshold('0.2'); showValue(0.2,1,false);">Conservative</button>
+                                                <button type="button"
+                                                        class="button_default"
+                                                        data-toggle="tooltip" data-placement="top" title="Balanced Recall and Precision"
+                                                        onclick="setThreshold('0.5'); showValue(0.5,1,false);">Balanced</button>
+                                                <button type="button"
+                                                        class="button_aggressive"
+                                                        data-toggle="tooltip" data-placement="top" title="Lower Recall, Higher Precision, tries to select only the best applicants"
+                                                        onclick="setThreshold('0.9'); showValue(0.9,1,false);">Aggressive</button>
                                              </div>
                                         </div>
                                         
@@ -738,6 +747,7 @@
         setValue(0.5, 1, false);
         document.getElementById("myInput").value = 0.5;
         newData("scores_saspe%202.csv");
+        changeData("1");
 
     });
     window.addEventListener('resize', function () {
@@ -1352,7 +1362,9 @@
             .data(result.slice(0, 13))
             .enter()
             .append("div")
-            //.attr("class", "listItem")
+            .attr("id", function (d) {
+                return d.name
+            })
             .text(function (d) {
                 return d.name + " " + d.value
             })
@@ -1362,13 +1374,22 @@
             .on("mouseleave", function (d, i) {
                 unhighlight(d3.select("#featureList2"))
             });
+        
+        document.getElementById("situation in star").style.color = "red";
+        document.getElementById("country of undergrad").style.color = "red";
+        document.getElementById("characteristic in star").style.color = "red";
+        document.getElementById("industry in job2").style.color = "red";
+        
+        
     });
     d3.csv('https://s3.amazonaws.com/files-deepchoice/DeepChoice/features2.csv', function (error, result) {
         d3.select("#featureList").selectAll("li")
             .data(result.slice(0, 13))
             .enter()
             .append("div")
-            //.attr("class", "listItem")
+            .attr("id", function (d) {
+                return d.name
+            })
             .text(function (d) {
                 return d.name
             })
@@ -1383,6 +1404,11 @@
             .text("9/13");
         d3.selectAll("#match_features_pct")
             .style("width", ((9 / 13) * 100) + "%");
+        
+        document.getElementById("age").style.color = "blue";
+        document.getElementById("percentil in logic test").style.color = "blue";
+        document.getElementById("score in logic test").style.color = "blue";
+        document.getElementById("major").style.color = "blue";
     });
 
     function highlight(name, list) {
@@ -1390,15 +1416,11 @@
             .style("background-color", function (d, i) {
                 return d.name == name ? "#009ACD" : undefined
             })
-            .style("color", function (d, i) {
-                return d.name == name ? "white" : undefined
-            })
     }
 
     function unhighlight(list) {
         list.selectAll("div")
             .style("background-color", undefined)
-            .style("color", undefined)
 
     }
 </script>
