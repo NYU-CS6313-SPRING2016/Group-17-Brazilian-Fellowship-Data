@@ -10,7 +10,7 @@ Visual DeepChoice is a visualization tool to visualize and interact with the the
 
 The threshold is very important in the system because it represents the minimum score that an applicant has to have to be approved. Every time the user changes the value for the threshold, all the metrics change accordingly to provide the new results. Even though Visual DeepChoice was designed specifically for the predictions from DeepChoice, the visualization tool is general enough to analyze the results from any binary classifier.
 
-**Video**: https://vimeo.com/167052043?utm_source=email&utm_medium=vimeo-cliptranscode-201504&utm_campaign=29220
+**Video**: https://vimeo.com/167203404
 
 **Demo**: http://NYU-CS6313-SPRING2016.github.io/Group-17-Brazilian-Fellowship-Data
 
